@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const stats = [
   { num: '150+', label: '완성 프로젝트' },
@@ -12,27 +13,41 @@ export default function Hero() {
 
       {/* ── Background layers ── */}
 
-      {/* Atmospheric depth layer — ghost image under all overlays */}
+      {/* Real interior photograph — animated drift wrapper */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="hero-atmo absolute"
-          style={{
-            inset: '-5%',
-            backgroundImage: 'url("https://picsum.photos/seed/sd-atmo/2400/1400")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 38%',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.18,
-          }}
-        />
+        <div className="hero-atmo absolute" style={{ inset: '-5%' }}>
+          <Image
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
       </div>
 
-      {/* Vignette: warm amber centre fading to deep warm-dark edges */}
+      {/* Warm dark scrim — base opacity so text always wins */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(18,13,8,0.60)' }}
+      />
+
+      {/* Bottom gradient — deep crush that anchors the text block */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 90% 75% at 38% 52%, #1E1B13 0%, #0D0B07 100%)',
+            'linear-gradient(to top, rgba(10,8,5,0.97) 0%, rgba(10,8,5,0.78) 28%, rgba(10,8,5,0.22) 56%, transparent 80%)',
+        }}
+      />
+
+      {/* Top gradient — slight header darkening */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(10,8,5,0.50) 0%, transparent 30%)',
         }}
       />
 
