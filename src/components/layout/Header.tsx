@@ -38,30 +38,38 @@ export default function Header() {
       }`}
     >
       <div className="container-main">
-        <div className="flex items-center justify-between h-16 md:h-[4.5rem]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+        <div className="flex items-center justify-between h-20 md:h-24">
+
+          {/* Logo — brand mark, not a menu label */}
+          <Link href="/" className="flex items-center leading-none">
             <span
-              className={`text-base md:text-lg font-bold tracking-tight transition-colors duration-300 ${
-                solid ? 'text-dark' : 'text-white/90'
+              className={`text-[1.45rem] md:text-[1.8rem] font-bold tracking-[-0.025em] transition-colors duration-300 ${
+                solid ? 'text-dark' : 'text-white/95'
               }`}
             >
-              수<span className={solid ? 'text-gold' : 'text-[#C9A87C]'}>디자인</span>
+              수
+            </span>
+            <span
+              className={`text-[1.45rem] md:text-[1.8rem] font-bold tracking-[-0.025em] transition-colors duration-300 ${
+                solid ? 'text-gold' : 'text-[#C9A87C]'
+              }`}
+            >
+              디자인
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-11">
+          <nav className="hidden md:flex items-center gap-12 lg:gap-14">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-normal tracking-wide transition-colors duration-300 ${
+                className={`text-sm font-light tracking-[0.07em] transition-colors duration-300 ${
                   pathname === link.href
                     ? 'text-gold'
                     : solid
-                    ? 'text-dark-soft/75 hover:text-dark'
-                    : 'text-white/50 hover:text-white/85'
+                    ? 'text-dark-soft/70 hover:text-dark'
+                    : 'text-white/45 hover:text-white/80'
                 }`}
               >
                 {link.label}
@@ -69,14 +77,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA — quietest element, tertiary */}
           <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className={`text-[13px] tracking-wide border-b pb-px transition-all duration-300 ${
+              className={`text-[13px] font-light tracking-[0.1em] border-b pb-px transition-all duration-300 ${
                 solid
-                  ? 'text-dark-soft/75 border-dark-soft/30 hover:text-dark hover:border-dark/60'
-                  : 'text-white/50 border-white/20 hover:text-white/80 hover:border-white/45'
+                  ? 'text-dark-soft/55 border-dark-soft/25 hover:text-dark hover:border-dark/50'
+                  : 'text-white/38 border-white/18 hover:text-white/65 hover:border-white/38'
               }`}
             >
               무료 상담
@@ -85,15 +93,15 @@ export default function Header() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden p-2 -mr-1 flex flex-col justify-center gap-[5px]"
+            className="md:hidden p-2 -mr-1 flex flex-col justify-center gap-[6px]"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="메뉴 열기"
             aria-expanded={isOpen}
           >
             <span
-              className={`block w-5 h-px transition-all duration-300 origin-center ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${
                 solid ? 'bg-dark' : 'bg-white/70'
-              } ${isOpen ? 'rotate-45 translate-y-[6px]' : ''}`}
+              } ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
             />
             <span
               className={`block w-4 h-px transition-all duration-300 ${
@@ -101,9 +109,9 @@ export default function Header() {
               } ${isOpen ? 'opacity-0' : ''}`}
             />
             <span
-              className={`block w-5 h-px transition-all duration-300 origin-center ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${
                 solid ? 'bg-dark' : 'bg-white/70'
-              } ${isOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}
+              } ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
             />
           </button>
         </div>
