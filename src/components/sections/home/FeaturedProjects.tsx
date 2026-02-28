@@ -3,22 +3,24 @@ import Image from 'next/image'
 import { portfolioItems } from '@/data/portfolio'
 
 export default function FeaturedProjects() {
-  const featured = portfolioItems.filter((p) => p.featured).slice(0, 4)
+  // 3 items: left large + right stacked pair
+  const [hero, ...pair] = portfolioItems.filter((p) => p.featured).slice(0, 3)
 
   return (
     <section className="section-padding bg-warm-50">
       <div className="container-main">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 md:mb-20">
+
+        {/* ── Section header ── */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 md:mb-18">
           <div>
             <span className="section-label">Portfolio</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
+            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-dark leading-snug">
               주요 시공 사례
             </h2>
           </div>
           <Link
             href="/portfolio"
-            className="btn-text self-start md:self-auto mb-1"
+            className="btn-text self-start md:self-auto shrink-0"
           >
             전체 보기
             <svg
@@ -33,54 +35,71 @@ export default function FeaturedProjects() {
           </Link>
         </div>
 
-        {/* Editorial grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-          {featured.map((item, index) => (
-            <Link
-              key={item.id}
-              href="/portfolio"
-              className={`group relative overflow-hidden bg-warm-200 ${
-                index === 0 ? 'md:col-span-2 h-[55vw] md:h-[520px] max-h-[600px]' : 'h-64 md:h-80'
-              }`}
-            >
-              <Image
-                src={`https://picsum.photos/seed/${item.imageId}/1200/800`}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                sizes={
-                  index === 0
-                    ? '(max-width: 768px) 100vw, 100vw'
-                    : '(max-width: 768px) 100vw, 50vw'
-                }
-              />
+        {/* ── Editorial split: 60% left hero + 40% right stacked pair ── */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 md:h-[600px] lg:h-[660px]">
 
-              {/* Lighter, more editorial overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+          {/* Left — large hero image */}
+          <Link
+            href="/portfolio"
+            className="group md:col-span-3 relative overflow-hidden bg-warm-200
+                       h-[62vw] md:h-full"
+          >
+            <Image
+              src={`https://picsum.photos/seed/${hero.imageId}/1200/900`}
+              alt={hero.title}
+              fill
+              className="object-cover transition-transform duration-[1100ms] ease-out
+                         group-hover:scale-[1.04]"
+              priority
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+            {/* Gradient: only bottom third */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
 
-              {/* Category — top right, minimal */}
-              <div className="absolute top-5 right-5">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-white/70">
-                  {item.category}
-                </span>
-              </div>
+            {/* Caption */}
+            <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-2.5">
+                {hero.category}&ensp;·&ensp;{hero.location}&ensp;·&ensp;{hero.area}
+              </p>
+              <h3 className="text-white text-xl md:text-2xl font-bold leading-snug">
+                {hero.title}
+              </h3>
+              <p className="text-white/60 text-sm mt-1">{hero.subtitle}</p>
+            </div>
+          </Link>
 
-              {/* Info — bottom, generous padding */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-white/50 text-xs tracking-wider mb-2">
-                  {item.location} · {item.area}
-                </p>
-                <h3
-                  className={`text-white font-bold leading-snug ${
-                    index === 0 ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
-                  }`}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-white/60 text-sm mt-1">{item.subtitle}</p>
-              </div>
-            </Link>
-          ))}
+          {/* Right — stacked pair */}
+          <div className="md:col-span-2 flex flex-col gap-3 md:gap-4 md:h-full">
+            {pair.map((item) => (
+              <Link
+                key={item.id}
+                href="/portfolio"
+                className="group relative overflow-hidden bg-warm-200 flex-1
+                           h-52 md:h-full"
+              >
+                <Image
+                  src={`https://picsum.photos/seed/${item.imageId}/800/700`}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-[1100ms] ease-out
+                             group-hover:scale-[1.05]"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+
+                {/* Caption */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-1.5">
+                    {item.category}&ensp;·&ensp;{item.area}
+                  </p>
+                  <h3 className="text-white text-base font-bold leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
