@@ -214,12 +214,25 @@ export default function Hero() {
             </div>
           ))}
 
-          {/* Scroll indicator — anchored to the far right */}
-          <div className="ml-auto flex items-end gap-2.5 text-warm-400/40">
-            <div className="w-px h-6 bg-gradient-to-b from-white/20 to-transparent" />
-            <span className="text-[9px] tracking-[0.3em] uppercase pb-px">Scroll</span>
-          </div>
+        </div>
+      </div>
 
+      {/* ── Atmospheric scroll indicator ── */}
+      <div className="hero-enter hero-enter-4 absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10
+                      flex flex-col items-center gap-3 pointer-events-none select-none">
+        <span className="text-[8px] tracking-[0.45em] uppercase text-white/22">Scroll</span>
+        {/* Line container — overflow hidden clips the flowing segment */}
+        <div className="relative w-px h-14 overflow-hidden">
+          {/* Dim base line */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-white/8 to-transparent" />
+          {/* Flowing light segment */}
+          <div
+            className="hero-scroll-flow absolute w-full"
+            style={{
+              height: '45%',
+              background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.55), transparent)',
+            }}
+          />
         </div>
       </div>
 

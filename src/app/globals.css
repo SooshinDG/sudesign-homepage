@@ -138,3 +138,20 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-enter { animation: none; opacity: 1; }
 }
+
+/* ── Hero scroll indicator — flowing segment ── */
+@keyframes scrollFlow {
+  0%   { top: -50%; opacity: 0;   }
+  15%  { opacity: 1;              }
+  85%  { opacity: 0.8;            }
+  100% { top: 150%; opacity: 0;   }
+}
+
+.hero-scroll-flow {
+  animation: scrollFlow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: 1.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-flow { animation: none; top: 30%; opacity: 0.5; }
+}
