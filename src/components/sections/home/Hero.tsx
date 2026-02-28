@@ -112,11 +112,12 @@ export default function Hero() {
 
           {/* Left: editorial text column — intentionally narrow, left-anchored */}
           <div className="w-full max-w-[21rem] md:max-w-[26rem] lg:max-w-[28rem]">
-            <span className="section-label">Interior Design Studio</span>
+            <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
 
             {/* Short emotional headline */}
             <h1
-              className="text-[3.4rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7rem]
+              className="hero-enter hero-enter-1
+                         text-[3.4rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7rem]
                          font-bold text-white leading-[1.05] mb-10 md:mb-14"
               style={{
                 letterSpacing: '-0.025em',
@@ -131,7 +132,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtle, airy subtitle */}
-            <p className="text-warm-400/85 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
+            <p className="hero-enter hero-enter-2 text-warm-400/85 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
               조용히, 그러나 분명하게.
               <br />
               수디자인은 당신의 이야기가 담긴
@@ -140,7 +141,7 @@ export default function Hero() {
             </p>
 
             {/* Minimal text-link CTAs — no boxes, no bold colours */}
-            <div className="flex items-center gap-7">
+            <div className="hero-enter hero-enter-3 flex items-center gap-7">
               <Link
                 href="/portfolio"
                 className="group flex items-center gap-2 text-sm text-warm-400/70
@@ -180,7 +181,7 @@ export default function Hero() {
           </div>
 
           {/* Right: editorial vertical text — desktop only */}
-          <div className="hidden lg:flex flex-col items-center gap-5 pb-1 select-none">
+          <div className="hero-enter hero-enter-3 hidden lg:flex flex-col items-center gap-5 pb-1 select-none">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-white/10" />
             <p
               className="text-[9px] text-white/18 tracking-[0.5em] uppercase font-light"
@@ -194,7 +195,7 @@ export default function Hero() {
       </div>
 
       {/* ── Bottom stats strip ── */}
-      <div className="container-main relative z-10 pb-9 md:pb-11">
+      <div className="hero-enter hero-enter-4 container-main relative z-10 pb-9 md:pb-11">
         <div className="border-t border-white/[0.07] pt-6 flex items-center">
 
           {stats.map((stat, i) => (
