@@ -57,18 +57,44 @@ export default function PortfolioClient() {
                   src={`https://picsum.photos/seed/${item.imageId}/1200/800`}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-[1000ms] ease-out
-                             group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-[1400ms] ease-out
+                             group-hover:scale-[1.06]"
                   sizes={
                     isFeature
                       ? '(max-width: 768px) 100vw, 100vw'
                       : '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw'
                   }
                 />
-                {/* No overlay at rest — image speaks alone.
-                    Barely-there scrim only on hover for legibility. */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/6
-                                transition-colors duration-700" />
+
+                {/* Hover overlay — gradient pool + info reveal */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100
+                                transition-opacity duration-700 pointer-events-none">
+                  {/* Bottom gradient */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        'linear-gradient(to top, rgba(8,6,4,0.82) 0%, rgba(8,6,4,0.38) 40%, transparent 68%)',
+                    }}
+                  />
+                  {/* Info panel — slides up into view */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 p-6 md:p-8
+                               translate-y-2 group-hover:translate-y-0
+                               transition-transform duration-700 delay-100 ease-out"
+                  >
+                    <p className="text-[9px] tracking-[0.3em] uppercase text-white/55 mb-2.5">
+                      {item.category}&ensp;·&ensp;{item.location}
+                    </p>
+                    <h3
+                      className={`font-semibold text-white leading-snug ${
+                        isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
               </div>
 
               {/* ── Caption — below image, editorial ── */}
