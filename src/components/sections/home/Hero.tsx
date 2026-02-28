@@ -12,6 +12,21 @@ export default function Hero() {
 
       {/* ── Background layers ── */}
 
+      {/* Atmospheric depth layer — ghost image under all overlays */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="hero-atmo absolute"
+          style={{
+            inset: '-5%',
+            backgroundImage: 'url("https://picsum.photos/seed/sd-atmo/2400/1400")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 38%',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.18,
+          }}
+        />
+      </div>
+
       {/* Vignette: warm amber centre fading to deep warm-dark edges */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -21,11 +36,29 @@ export default function Hero() {
         }}
       />
 
+      {/* Cinematic edge vignette — deep corner crush for drama */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 68% 68% at 38% 52%, transparent 28%, rgba(6,4,2,0.72) 100%)',
+        }}
+      />
+
+      {/* Headline focus glow — warm amber bloom behind text block */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 52% 55% at 18% 60%, rgba(184,150,106,0.13) 0%, transparent 68%)',
+        }}
+      />
+
       {/* Gold ambient bleed — top-right */}
-      <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-[#B8966A]/10 via-[#B8966A]/3 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-[#B8966A]/12 via-[#B8966A]/4 to-transparent pointer-events-none" />
 
       {/* Gold ambient bleed — bottom-left */}
-      <div className="absolute bottom-0 left-0 w-2/5 h-1/2 bg-gradient-to-tr from-[#B8966A]/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-2/5 h-1/2 bg-gradient-to-tr from-[#B8966A]/6 to-transparent pointer-events-none" />
 
       {/* Film grain texture */}
       <div
@@ -52,17 +85,20 @@ export default function Hero() {
             <h1
               className="text-[3.4rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7rem]
                          font-bold text-white leading-[1.05] mb-10 md:mb-14"
-              style={{ letterSpacing: '-0.025em' }}
+              style={{
+                letterSpacing: '-0.025em',
+                textShadow: '0 2px 80px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.7)',
+              }}
             >
               공간이
               <br />
-              삶이
+              <span className="text-[#C9A87C]">삶이</span>
               <br />
               됩니다
             </h1>
 
             {/* Subtle, airy subtitle */}
-            <p className="text-white/30 text-sm leading-[2.1] max-w-[20rem] mb-11 md:mb-14">
+            <p className="text-warm-400/85 text-sm leading-[2.1] max-w-[20rem] mb-11 md:mb-14">
               조용히, 그러나 분명하게.
               <br />
               수디자인은 당신의 이야기가 담긴
@@ -74,8 +110,8 @@ export default function Hero() {
             <div className="flex items-center gap-7">
               <Link
                 href="/portfolio"
-                className="group flex items-center gap-2 text-sm text-white/40
-                           hover:text-white/75 transition-colors duration-300 tracking-wide"
+                className="group flex items-center gap-2 text-sm text-warm-400/70
+                           hover:text-white/90 transition-colors duration-300 tracking-wide"
               >
                 포트폴리오 보기
                 <svg
@@ -93,8 +129,8 @@ export default function Hero() {
 
               <Link
                 href="/contact"
-                className="group flex items-center gap-2 text-sm text-white/40
-                           hover:text-white/75 transition-colors duration-300 tracking-wide"
+                className="group flex items-center gap-2 text-sm text-warm-400/70
+                           hover:text-white/90 transition-colors duration-300 tracking-wide"
               >
                 무료 상담 신청
                 <svg
@@ -137,7 +173,7 @@ export default function Hero() {
                 <p className="text-base md:text-lg font-light text-white/80 tracking-tight leading-none">
                   {stat.num}
                 </p>
-                <p className="text-[10px] text-white/22 mt-1.5 tracking-[0.22em] uppercase">
+                <p className="text-[10px] text-warm-300/65 mt-1.5 tracking-[0.22em] uppercase">
                   {stat.label}
                 </p>
               </div>
@@ -145,7 +181,7 @@ export default function Hero() {
           ))}
 
           {/* Scroll indicator — anchored to the far right */}
-          <div className="ml-auto flex items-end gap-2.5 text-white/18">
+          <div className="ml-auto flex items-end gap-2.5 text-warm-400/40">
             <div className="w-px h-6 bg-gradient-to-b from-white/20 to-transparent" />
             <span className="text-[9px] tracking-[0.3em] uppercase pb-px">Scroll</span>
           </div>

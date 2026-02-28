@@ -16,7 +16,7 @@ export default function PortfolioPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             포트폴리오
           </h1>
-          <p className="text-white/45 text-sm md:text-base leading-loose max-w-lg">
+          <p className="text-warm-400/85 text-sm md:text-base leading-loose max-w-lg">
             수디자인이 완성한 공간들을 카테고리별로 확인해보세요.
             각 프로젝트에 담긴 고객의 이야기와 디자인 철학을 만날 수 있습니다.
           </p>

@@ -87,10 +87,26 @@
 
   /* More breathing room */
   .section-padding {
-    @apply py-24 md:py-36;
+    @apply py-28 md:py-40;
   }
 
   .section-padding-sm {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
+}
+
+/* ── Hero atmospheric background drift ── */
+@keyframes atmoDrift {
+  0%,  100% { transform: scale(1.08) translate(0%,    0%   ); }
+  35%        { transform: scale(1.08) translate(-0.6%, -0.4%); }
+  68%        { transform: scale(1.08) translate(0.5%,  -0.7%); }
+}
+
+.hero-atmo {
+  animation: atmoDrift 50s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmo { animation: none; }
 }

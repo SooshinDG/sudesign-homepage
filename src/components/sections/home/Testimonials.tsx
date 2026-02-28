@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-warm-50">
+    <section className="section-padding bg-warm-50 border-t border-warm-300">
       <div className="container-main">
         {/* Header */}
         <div className="mb-14 md:mb-20">

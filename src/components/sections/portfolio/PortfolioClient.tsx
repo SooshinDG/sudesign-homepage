@@ -23,7 +23,7 @@ export default function PortfolioClient() {
             className={`text-sm tracking-wide transition-all duration-200 ${
               active === cat
                 ? 'text-dark border-b border-dark pb-px'
-                : 'text-muted hover:text-dark-soft'
+                : 'text-dark-soft/70 hover:text-dark'
             }`}
           >
             {cat}
@@ -74,7 +74,7 @@ export default function PortfolioClient() {
               {/* ── Caption — below image, editorial ── */}
               <div className="mt-5 md:mt-6 flex items-start justify-between gap-6">
                 <div>
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-muted mb-2.5">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-dark-soft/70 mb-2.5">
                     {item.category}&ensp;·&ensp;{item.location}
                   </p>
                   <h3
@@ -84,11 +84,11 @@ export default function PortfolioClient() {
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted mt-1 leading-relaxed">{item.subtitle}</p>
+                  <p className="text-sm text-dark-soft mt-1 leading-relaxed">{item.subtitle}</p>
                 </div>
 
-                {/* Area — right-aligned, muted */}
-                <p className="text-xs text-warm-400 shrink-0 pt-1 tabular-nums">{item.area}</p>
+                {/* Area — right-aligned */}
+                <p className="text-xs text-dark-soft/65 shrink-0 pt-1 tabular-nums">{item.area}</p>
               </div>
             </article>
           )
@@ -97,7 +97,7 @@ export default function PortfolioClient() {
 
       {/* Empty state */}
       {filtered.length === 0 && (
-        <div className="py-28 text-center text-muted text-sm tracking-widest uppercase">
+        <div className="py-28 text-center text-dark-soft/60 text-sm tracking-widest uppercase">
           해당 카테고리의 프로젝트가 없습니다
         </div>
       )}

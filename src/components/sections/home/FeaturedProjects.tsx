@@ -7,7 +7,7 @@ export default function FeaturedProjects() {
   const [hero, ...pair] = portfolioItems.filter((p) => p.featured).slice(0, 3)
 
   return (
-    <section className="section-padding bg-warm-50">
+    <section className="section-padding bg-warm-50 border-t border-warm-300">
       <div className="container-main">
 
         {/* ── Section header ── */}
@@ -58,13 +58,13 @@ export default function FeaturedProjects() {
 
             {/* Caption */}
             <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-2.5">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-warm-200/90 mb-2.5">
                 {hero.category}&ensp;·&ensp;{hero.location}&ensp;·&ensp;{hero.area}
               </p>
               <h3 className="text-white text-xl md:text-2xl font-bold leading-snug">
                 {hero.title}
               </h3>
-              <p className="text-white/60 text-sm mt-1">{hero.subtitle}</p>
+              <p className="text-warm-300/90 text-sm mt-1">{hero.subtitle}</p>
             </div>
           </Link>
 
@@ -89,7 +89,7 @@ export default function FeaturedProjects() {
 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-1.5">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-warm-200/90 mb-1.5">
                     {item.category}&ensp;·&ensp;{item.area}
                   </p>
                   <h3 className="text-white text-base font-bold leading-snug">

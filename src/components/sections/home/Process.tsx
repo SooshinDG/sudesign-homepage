@@ -23,7 +23,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="section-padding bg-warm-100">
+    <section className="section-padding bg-warm-200 border-t border-warm-300">
       <div className="container-main">
         {/* Header */}
         <div className="mb-16 md:mb-24">
