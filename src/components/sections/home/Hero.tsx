@@ -108,10 +108,10 @@ export default function Hero() {
       {/* ── Main content ── */}
       <div className="container-main relative z-10 flex-1 flex flex-col justify-end pb-16 md:pb-20 pt-36 md:pt-44">
 
-        <div className="flex items-end justify-between gap-10">
+        <div className="flex items-end justify-between gap-10 lg:pl-6 xl:pl-10">
 
-          {/* Left: editorial text block */}
-          <div className="flex-1 max-w-xl">
+          {/* Left: editorial text column — intentionally narrow, left-anchored */}
+          <div className="w-full max-w-[21rem] md:max-w-[26rem] lg:max-w-[28rem]">
             <span className="section-label">Interior Design Studio</span>
 
             {/* Short emotional headline */}
@@ -131,7 +131,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtle, airy subtitle */}
-            <p className="text-warm-400/85 text-sm leading-[2.1] max-w-[20rem] mb-11 md:mb-14">
+            <p className="text-warm-400/85 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
               조용히, 그러나 분명하게.
               <br />
               수디자인은 당신의 이야기가 담긴
