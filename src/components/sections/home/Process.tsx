@@ -26,41 +26,30 @@ export default function Process() {
     <section className="section-padding bg-warm-100">
       <div className="container-main">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-3">
-            Process
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark">
+        <div className="mb-16 md:mb-24">
+          <span className="section-label">Process</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
             시공 절차
           </h2>
-          <p className="text-muted text-base md:text-lg mt-4 max-w-lg mx-auto">
+          <p className="text-muted text-sm md:text-base mt-4 leading-loose max-w-sm">
             체계적인 프로세스로 고객의 만족을 보장합니다.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector line (desktop) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-7 left-full w-full h-px bg-gradient-to-r from-gold/40 to-transparent z-0 -translate-x-4" />
-              )}
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl font-bold text-gold/20 leading-none">
-                    {step.number}
-                  </span>
-                  <div className="flex-1 h-px bg-border" />
-                </div>
-                <h3 className="text-lg font-bold text-dark mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+          {steps.map((step) => (
+            <div key={step.number}>
+              {/* Step number — fine, elegant */}
+              <p className="text-[11px] tracking-[0.25em] text-gold mb-5 font-normal">
+                — {step.number}
+              </p>
+              <h3 className="text-base font-bold text-dark mb-3">
+                {step.title}
+              </h3>
+              <p className="text-muted text-sm leading-loose">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>

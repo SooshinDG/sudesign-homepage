@@ -15,12 +15,15 @@
   }
 
   body {
-    @apply bg-warm-50 text-dark-soft antialiased;
+    @apply bg-warm-100 text-dark-soft antialiased;
     font-feature-settings: 'kern' 1;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-dark;
+    @apply font-bold text-dark;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 
   a {
@@ -33,44 +36,61 @@
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-warm-100;
+    @apply bg-warm-200;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-warm-300 rounded-full;
+    @apply bg-warm-300;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gold;
+    @apply bg-muted;
   }
 }
 
 @layer components {
   .container-main {
-    @apply mx-auto max-w-7xl px-4 md:px-8 lg:px-12;
+    @apply mx-auto max-w-7xl px-5 md:px-10 lg:px-14;
   }
 
+  /* Refined buttons — no bold rounding, no gold hover flash */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-dark text-white text-sm font-medium
-           rounded-sm hover:bg-gold transition-all duration-300 gap-2;
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-dark text-white text-sm
+           tracking-wide transition-all duration-300 gap-2
+           hover:bg-dark-soft;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-dark text-dark text-sm font-medium
-           rounded-sm hover:bg-dark hover:text-white transition-all duration-300 gap-2;
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-dark text-dark text-sm
+           tracking-wide transition-all duration-300 gap-2
+           hover:bg-dark hover:text-white;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-white/30 text-white text-sm font-medium
-           rounded-sm hover:bg-white hover:text-dark transition-all duration-300 gap-2;
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-white/40 text-white text-sm
+           tracking-wide transition-all duration-300 gap-2
+           hover:border-white/70;
   }
 
+  /* Subtle text-link CTA */
+  .btn-text {
+    @apply inline-flex items-center gap-2 text-sm text-dark-soft
+           border-b border-dark/30 pb-0.5 tracking-wide
+           hover:text-gold hover:border-gold transition-colors duration-200;
+  }
+
+  /* Section label eyebrow */
+  .section-label {
+    @apply block text-[11px] tracking-[0.28em] uppercase font-normal text-gold mb-5;
+  }
+
+  /* More breathing room */
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-24 md:py-36;
   }
 
   .section-padding-sm {
-    @apply py-14 md:py-20;
+    @apply py-16 md:py-24;
   }
 }

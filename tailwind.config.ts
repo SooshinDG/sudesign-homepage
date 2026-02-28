@@ -9,22 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: '#1C1C1A',
-        'dark-soft': '#2C2A27',
-        muted: '#6B6460',
+        dark: '#1A1A18',
+        'dark-soft': '#2E2C29',
+        muted: '#7A7570',
         gold: {
-          DEFAULT: '#C4A35A',
-          light: '#DFC27A',
-          dark: '#A07830',
+          DEFAULT: '#B8966A',
+          light: '#D4B48C',
+          dark: '#8F6D43',
         },
         warm: {
-          50: '#FAFAF8',
-          100: '#F5F0E8',
-          200: '#EDE4D8',
-          300: '#E0D5C5',
-          400: '#CDBFA8',
+          50: '#FAF8F5',
+          100: '#F4EFE8',
+          200: '#EAE3D8',
+          300: '#DDD4C5',
+          400: '#C8BAA6',
         },
-        border: '#E5DDD5',
+        border: '#E2D9CE',
       },
       fontFamily: {
         sans: [
@@ -35,13 +35,20 @@ const config: Config = {
           'sans-serif',
         ],
       },
+      lineHeight: {
+        heading: '1.25',
+        snugger: '1.35',
+      },
+      letterSpacing: {
+        label: '0.28em',
+      },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
-        'fade-in': 'fadeIn 0.4s ease-out forwards',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
       },
       keyframes: {
         fadeUp: {
-          from: { opacity: '0', transform: 'translateY(20px)' },
+          from: { opacity: '0', transform: 'translateY(16px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {

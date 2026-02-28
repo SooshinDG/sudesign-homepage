@@ -105,7 +105,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="홍길동"
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white placeholder:text-warm-400"
+            className="w-full px-4 py-3 border border-border text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
           />
         </div>
 
@@ -121,7 +121,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="010-0000-0000"
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white placeholder:text-warm-400"
+            className="w-full px-4 py-3 border border-border text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
           />
         </div>
 
@@ -136,7 +136,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             placeholder="example@email.com"
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white placeholder:text-warm-400"
+            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
           />
         </div>
 
@@ -150,7 +150,7 @@ export default function ContactForm() {
             value={form.serviceType}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white text-dark-soft appearance-none cursor-pointer"
+            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 text-dark-soft appearance-none cursor-pointer"
           >
             <option value="">선택해주세요</option>
             {serviceTypes.map((s) => (
@@ -170,7 +170,7 @@ export default function ContactForm() {
             value={form.area}
             onChange={handleChange}
             placeholder="예: 32평"
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white placeholder:text-warm-400"
+            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
           />
         </div>
 
@@ -183,7 +183,7 @@ export default function ContactForm() {
             name="budget"
             value={form.budget}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white text-dark-soft appearance-none cursor-pointer"
+            className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 text-dark-soft appearance-none cursor-pointer"
           >
             <option value="">선택해주세요</option>
             {budgetRanges.map((b) => (
@@ -204,7 +204,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           placeholder="원하시는 스타일, 특별히 요청하실 사항을 자유롭게 작성해주세요."
-          className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-white placeholder:text-warm-400 resize-none"
+          className="w-full px-4 py-3 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400 resize-none"
         />
       </div>
 

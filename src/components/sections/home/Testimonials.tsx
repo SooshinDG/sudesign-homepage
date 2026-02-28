@@ -27,46 +27,36 @@ export default function Testimonials() {
     <section className="section-padding bg-warm-50">
       <div className="container-main">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-3">
-            Reviews
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark">
+        <div className="mb-14 md:mb-20">
+          <span className="section-label">Reviews</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
             고객 후기
           </h2>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-sm p-6 md:p-8 border border-border hover:border-gold/30 hover:shadow-md transition-all duration-300"
+              className="bg-warm-100 p-8 md:p-10 border-l-2 border-gold/40"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {Array.from({ length: item.rating }).map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-4 h-4 text-gold fill-gold"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              {/* Large decorative quote mark */}
+              <div className="text-5xl font-serif text-gold/20 leading-none mb-5 select-none">
+                &ldquo;
               </div>
 
-              <blockquote className="text-dark-soft text-sm leading-relaxed mb-6">
-                &ldquo;{item.text}&rdquo;
+              <blockquote className="text-dark-soft text-sm leading-loose mb-8">
+                {item.text}
               </blockquote>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="w-9 h-9 rounded-full bg-warm-200 flex items-center justify-center text-dark font-bold text-sm">
+              <div className="flex items-center gap-3 pt-6 border-t border-border">
+                <div className="w-8 h-8 bg-warm-300 flex items-center justify-center text-dark font-medium text-xs">
                   {item.name[0]}
                 </div>
                 <div>
-                  <p className="font-semibold text-dark text-sm">{item.name}</p>
-                  <p className="text-muted text-xs">{item.location}</p>
+                  <p className="font-medium text-dark text-sm">{item.name}</p>
+                  <p className="text-muted text-xs mt-0.5">{item.location}</p>
                 </div>
               </div>
             </div>

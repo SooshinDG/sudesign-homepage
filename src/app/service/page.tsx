@@ -11,18 +11,14 @@ export default function ServicePage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-36 pb-16 bg-dark">
+      <section className="pt-40 pb-20 bg-dark">
         <div className="container-main">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">
-            Services
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
+          <span className="section-label">Services</span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             서비스
           </h1>
-          <p className="text-white/60 text-base md:text-lg max-w-xl">
-            공간의 성격과 고객의 니즈에 맞춰 최적의 인테리어 솔루션을
-            <br className="hidden md:block" />
-            제안해드립니다.
+          <p className="text-white/45 text-sm md:text-base leading-loose max-w-lg">
+            공간의 성격과 고객의 니즈에 맞춰 최적의 인테리어 솔루션을 제안해드립니다.
           </p>
         </div>
       </section>
@@ -30,26 +26,24 @@ export default function ServicePage() {
       {/* Services Detail */}
       <section className="section-padding bg-warm-50">
         <div className="container-main">
-          <div className="space-y-8 md:space-y-10">
+          <div className="space-y-6 md:space-y-8">
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`flex flex-col md:flex-row gap-8 md:gap-16 p-8 md:p-12 rounded-sm border border-border bg-white hover:border-gold/30 hover:shadow-md transition-all duration-300 ${
+                className={`flex flex-col md:flex-row gap-10 md:gap-20 p-8 md:p-14 border border-border bg-warm-100 ${
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
                 }`}
               >
                 {/* Icon & Title side */}
-                <div className="md:w-1/3 flex-shrink-0">
-                  <div className="text-5xl mb-5">{service.icon}</div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-dark mb-2">
+                <div className="md:w-64 flex-shrink-0">
+                  <div className="text-2xl mb-6 opacity-70">{service.icon}</div>
+                  <h2 className="text-xl md:text-2xl font-bold text-dark mb-2 leading-snug">
                     {service.title}
                   </h2>
-                  <p className="text-gold text-sm font-medium mb-4">
-                    {service.subtitle}
-                  </p>
-                  <div className="inline-block px-4 py-2 bg-warm-100 rounded-sm">
-                    <span className="text-xs text-muted">시작가</span>
-                    <p className="text-xl font-bold text-dark mt-0.5">
+                  <p className="text-gold text-xs tracking-wide mb-6">{service.subtitle}</p>
+                  <div className="inline-block border-l-2 border-gold pl-4">
+                    <span className="text-[10px] text-muted tracking-wider uppercase">시작가</span>
+                    <p className="text-xl font-light text-dark mt-1 tracking-tight">
                       {service.startingPrice}
                     </p>
                   </div>
@@ -57,32 +51,21 @@ export default function ServicePage() {
 
                 {/* Description side */}
                 <div className="md:flex-1">
-                  <p className="text-muted text-base leading-relaxed mb-8">
+                  <p className="text-muted text-sm leading-loose mb-8">
                     {service.description}
                   </p>
-                  <h3 className="text-sm font-semibold text-dark tracking-wide mb-4 uppercase">
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-muted mb-4">
                     포함 사항
-                  </h3>
+                  </p>
                   <ul className="space-y-3">
                     {service.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-sm text-dark-soft">
-                        <svg
-                          className="w-4 h-4 text-gold flex-shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2.5}
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
+                        <span className="text-gold mt-0.5 text-xs flex-shrink-0">—</span>
                         {feat}
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/contact"
-                    className="inline-flex mt-8 btn-primary"
-                  >
+                  <Link href="/contact" className="inline-flex mt-10 btn-secondary">
                     이 서비스 상담하기
                   </Link>
                 </div>
@@ -94,16 +77,20 @@ export default function ServicePage() {
 
       {/* Bottom CTA */}
       <section className="section-padding-sm bg-dark">
-        <div className="container-main text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            어떤 서비스가 맞는지 모르시겠나요?
-          </h2>
-          <p className="text-white/60 mb-8">
-            담당 디자이너와 무료로 상담하면 최적의 솔루션을 찾아드립니다.
-          </p>
-          <Link href="/contact" className="btn-ghost">
-            무료 상담 신청하기
-          </Link>
+        <div className="container-main">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                어떤 서비스가 맞는지 모르시겠나요?
+              </h2>
+              <p className="text-white/45 text-sm leading-loose">
+                담당 디자이너와 무료로 상담하면 최적의 솔루션을 찾아드립니다.
+              </p>
+            </div>
+            <Link href="/contact" className="btn-ghost shrink-0">
+              무료 상담 신청하기
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -61,15 +61,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-36 pb-16 bg-dark">
+      <section className="pt-40 pb-20 bg-dark">
         <div className="container-main">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">
-            About
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
+          <span className="section-label">About</span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             소개
           </h1>
-          <p className="text-white/60 text-base md:text-lg max-w-xl">
+          <p className="text-white/45 text-sm md:text-base leading-loose">
             공간을 새롭게 만드는 일을 8년째 해오고 있습니다.
           </p>
         </div>
@@ -78,18 +76,16 @@ export default function AboutPage() {
       {/* Brand Story */}
       <section className="section-padding bg-warm-50">
         <div className="container-main">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 items-start">
             {/* Text */}
             <div>
-              <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">
-                Our Story
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
+              <span className="section-label">Our Story</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-8 leading-snug">
                 공간이 삶을 바꾼다는
                 <br />
                 믿음으로 시작했습니다
               </h2>
-              <div className="space-y-4 text-muted text-base leading-relaxed">
+              <div className="space-y-5 text-muted text-sm leading-loose">
                 <p>
                   수디자인은 2016년, &ldquo;좋은 인테리어는 비싼 자재가 아니라 세심한 설계에서 온다&rdquo;는 생각으로 시작했습니다.
                 </p>
@@ -102,8 +98,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Stats block */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Stats block — no rounded, warm bg */}
+            <div className="grid grid-cols-2 gap-3">
               {[
                 { num: '2016', label: '설립 연도' },
                 { num: '150+', label: '완성 프로젝트' },
@@ -112,12 +108,12 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="p-6 md:p-8 bg-white border border-border rounded-sm text-center"
+                  className="p-7 md:p-8 bg-warm-100 border border-border text-center"
                 >
-                  <p className="text-3xl md:text-4xl font-bold text-dark mb-1">
+                  <p className="text-2xl md:text-3xl font-light text-dark mb-1.5 tracking-tight">
                     {stat.num}
                   </p>
-                  <p className="text-sm text-muted">{stat.label}</p>
+                  <p className="text-xs text-muted tracking-wider">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -128,23 +124,21 @@ export default function AboutPage() {
       {/* Values */}
       <section className="section-padding bg-dark">
         <div className="container-main">
-          <div className="mb-12 md:mb-16">
-            <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">
-              Values
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <div className="mb-14 md:mb-20">
+            <span className="section-label">Values</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               수디자인이 중요하게 여기는 것
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5">
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-8 border border-white/10 rounded-sm hover:border-gold/40 transition-colors"
+                className="p-10 bg-dark"
               >
-                <span className="text-gold text-lg mb-4 block">{v.icon}</span>
-                <h3 className="text-white text-xl font-bold mb-3">{v.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{v.description}</p>
+                <span className="text-gold text-xs mb-5 block tracking-widest">{v.icon}</span>
+                <h3 className="text-white text-lg font-bold mb-3">{v.title}</h3>
+                <p className="text-white/50 text-sm leading-loose">{v.description}</p>
               </div>
             ))}
           </div>
@@ -154,27 +148,25 @@ export default function AboutPage() {
       {/* Team */}
       <section className="section-padding bg-warm-50">
         <div className="container-main">
-          <div className="mb-12 md:mb-16 text-center">
-            <p className="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">
-              Team
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark">
+          <div className="mb-14 md:mb-20">
+            <span className="section-label">Team</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-dark">
               수디자인 팀
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white border border-border rounded-sm p-8 text-center hover:border-gold/30 hover:shadow-md transition-all duration-300"
+                className="bg-warm-100 border border-border p-8 md:p-10"
               >
-                <div className="w-20 h-20 bg-warm-200 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-bold text-dark">
+                <div className="w-12 h-12 bg-warm-300 flex items-center justify-center mb-6 text-dark font-medium text-sm">
                   {member.initial}
                 </div>
-                <h3 className="text-lg font-bold text-dark">{member.name}</h3>
-                <p className="text-gold text-sm font-medium mt-1 mb-1">{member.role}</p>
-                <p className="text-muted text-xs mb-4">{member.experience}</p>
-                <p className="text-dark-soft text-sm leading-relaxed">{member.description}</p>
+                <h3 className="text-base font-bold text-dark">{member.name}</h3>
+                <p className="text-gold text-xs tracking-wide mt-1 mb-0.5">{member.role}</p>
+                <p className="text-muted text-xs mb-5">{member.experience}</p>
+                <p className="text-dark-soft text-sm leading-loose">{member.description}</p>
               </div>
             ))}
           </div>
@@ -182,17 +174,21 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding-sm bg-gold">
-        <div className="container-main text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            함께 멋진 공간을 만들어요
-          </h2>
-          <p className="text-white/80 mb-8">
-            지금 바로 무료 상담을 신청하세요.
-          </p>
-          <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-dark text-sm font-semibold rounded-sm hover:bg-warm-100 transition-colors">
-            상담 신청하기
-          </Link>
+      <section className="section-padding-sm bg-dark">
+        <div className="container-main">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                함께 멋진 공간을 만들어요
+              </h2>
+              <p className="text-white/45 text-sm leading-loose">
+                지금 바로 무료 상담을 신청하세요.
+              </p>
+            </div>
+            <Link href="/contact" className="btn-ghost shrink-0">
+              상담 신청하기
+            </Link>
+          </div>
         </div>
       </section>
     </>
