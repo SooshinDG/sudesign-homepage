@@ -45,12 +45,30 @@ export default function Hero() {
         }}
       />
 
-      {/* Headline focus glow — warm amber bloom behind text block */}
+      {/* Headline ambient light — broad warm field enclosing the text block */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 52% 55% at 18% 60%, rgba(184,150,106,0.13) 0%, transparent 68%)',
+            'radial-gradient(ellipse 58% 62% at 16% 65%, rgba(184,150,106,0.22) 0%, transparent 72%)',
+        }}
+      />
+
+      {/* Headline core light — tight hot spot; simulates an off-screen source */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 22% 26% at 10% 66%, rgba(220,176,118,0.16) 0%, transparent 62%)',
+        }}
+      />
+
+      {/* Ground spill — faint floor pool that gives the light 3-D grounding */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 52% 18% at 18% 94%, rgba(160,120,70,0.09) 0%, transparent 70%)',
         }}
       />
 
