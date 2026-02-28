@@ -18,11 +18,11 @@ export default function ServicesOverview() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-warm-400/10">
           {services.map((service) => (
             <div
               key={service.id}
-              className="group p-8 md:p-10 bg-dark hover:bg-[#202020] transition-colors duration-300"
+              className="group p-8 md:p-10 bg-dark hover:bg-[#221F18] transition-colors duration-300"
             >
               <div className="text-2xl mb-6 opacity-80">{service.icon}</div>
               <h3 className="text-white text-lg font-bold mb-1.5 leading-snug">
@@ -32,7 +32,7 @@ export default function ServicesOverview() {
               <p className="text-white/55 text-sm leading-loose mb-8">
                 {service.description}
               </p>
-              <div className="flex items-center justify-between border-t border-white/8 pt-5">
+              <div className="flex items-center justify-between border-t border-warm-400/15 pt-5">
                 <span className="text-gold text-sm font-light">
                   {service.startingPrice}
                 </span>

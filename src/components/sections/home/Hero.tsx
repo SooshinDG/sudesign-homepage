@@ -8,16 +8,16 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#17171A] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-[#14120D] overflow-hidden">
 
       {/* ── Background layers ── */}
 
-      {/* Vignette: slightly warmer at centre, pure dark at edges */}
+      {/* Vignette: warm amber centre fading to deep warm-dark edges */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 90% 75% at 38% 52%, #1E1C19 0%, #0F0F11 100%)',
+            'radial-gradient(ellipse 90% 75% at 38% 52%, #1E1B13 0%, #0D0B07 100%)',
         }}
       />
 
