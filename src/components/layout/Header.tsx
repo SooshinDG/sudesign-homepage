@@ -38,19 +38,19 @@ export default function Header() {
       }`}
     >
       <div className="container-main">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-[5rem] md:h-[6.5rem]">
 
-          {/* Logo — brand mark, not a menu label */}
+          {/* Logo — brand mark */}
           <Link href="/" className="flex items-center leading-none">
             <span
-              className={`text-[1.45rem] md:text-[1.8rem] font-bold tracking-[-0.025em] transition-colors duration-300 ${
+              className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
                 solid ? 'text-dark' : 'text-white/95'
               }`}
             >
               수
             </span>
             <span
-              className={`text-[1.45rem] md:text-[1.8rem] font-bold tracking-[-0.025em] transition-colors duration-300 ${
+              className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
                 solid ? 'text-gold' : 'text-[#C9A87C]'
               }`}
             >
@@ -59,17 +59,17 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-12 lg:gap-14">
+          <nav className="hidden md:flex items-center gap-10 lg:gap-[4.5rem]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-light tracking-[0.07em] transition-colors duration-300 ${
+                className={`text-[15px] font-normal tracking-[0.06em] transition-colors duration-300 ${
                   pathname === link.href
                     ? 'text-gold'
                     : solid
-                    ? 'text-dark-soft/70 hover:text-dark'
-                    : 'text-white/45 hover:text-white/80'
+                    ? 'text-dark-soft/75 hover:text-dark'
+                    : 'text-white/60 hover:text-white/95'
                 }`}
               >
                 {link.label}
@@ -77,15 +77,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA — quietest element, tertiary */}
+          {/* Desktop CTA — gold button, most visible header element */}
           <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className={`text-[13px] font-light tracking-[0.1em] border-b pb-px transition-all duration-300 ${
-                solid
-                  ? 'text-dark-soft/55 border-dark-soft/25 hover:text-dark hover:border-dark/50'
-                  : 'text-white/38 border-white/18 hover:text-white/65 hover:border-white/38'
-              }`}
+              className="px-7 py-[0.6rem] rounded text-[13px] font-normal tracking-[0.08em]
+                         bg-[#C9A87C] text-[#0C0A07]
+                         transition-all duration-300
+                         hover:bg-[#D8BA90] hover:shadow-[0_4px_24px_rgba(201,168,124,0.55)]"
             >
               무료 상담
             </Link>
@@ -139,7 +138,9 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="block mt-5 py-3 text-center text-sm tracking-wide border border-dark/40 text-dark-soft hover:bg-dark hover:text-white transition-colors duration-200"
+            className="block mt-5 py-3 text-center text-sm tracking-[0.06em] rounded-sm
+                       bg-[#C9A87C] text-[#0E0C08]
+                       hover:bg-[#D4B48C] transition-colors duration-200"
           >
             무료 상담 신청
           </Link>
