@@ -86,7 +86,7 @@ export default function Header() {
                          transition-all duration-300
                          hover:bg-[#D8BA90] hover:shadow-[0_4px_24px_rgba(201,168,124,0.55)]"
             >
-              무료 상담
+              무료 상담 시작하기
             </Link>
           </div>
 
@@ -142,7 +142,7 @@ export default function Header() {
                        bg-[#C9A87C] text-[#0E0C08]
                        hover:bg-[#D4B48C] transition-colors duration-200"
           >
-            무료 상담 신청
+            무료 상담 시작하기
           </Link>
         </nav>
       </div>
