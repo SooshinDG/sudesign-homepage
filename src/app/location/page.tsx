@@ -67,7 +67,7 @@ export default function LocationPage() {
                 </span>
                 <p className="text-dark-soft/80 text-sm leading-[1.85]">
                   지하철 <strong className="text-dark-soft font-semibold">구일역</strong> 1번 출구에서<br />
-                  도보 약 <strong className="text-dark-soft font-semibold">7분</strong>
+                  도보 약 <strong className="text-dark-soft font-semibold">8분</strong>
                 </p>
               </div>
             </div>
@@ -104,21 +104,10 @@ export default function LocationPage() {
 
             {/* Parking / Building access */}
             <div className="mb-10">
-              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주차 · 건물 출입</p>
-              <ul className="space-y-3 text-sm text-dark-soft/75 leading-[1.85]">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[0.35rem] w-1 h-1 rounded-full bg-[#C9A87C]/60 shrink-0" />
-                  건물 내 방문자 주차 가능 (단기 무료, 관리사무소 확인 요망)
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[0.35rem] w-1 h-1 rounded-full bg-[#C9A87C]/60 shrink-0" />
-                  상가동 입구에서 엘리베이터 이용 후 1층 101호
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[0.35rem] w-1 h-1 rounded-full bg-[#C9A87C]/60 shrink-0" />
-                  방문 전 전화 예약을 권장드립니다
-                </li>
-              </ul>
+              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주차 안내</p>
+              <p className="text-sm text-dark-soft/75 leading-[1.85]">
+                매장 앞 도로변 주차 가능합니다.
+              </p>
             </div>
 
             <div className="w-10 h-px bg-border mb-8" />
