@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/service', label: '서비스' },
   { href: '/about', label: '소개' },
   { href: '/contact', label: '문의' },
+  { href: '/location', label: '오시는 길' },
 ]
 
 export default function Header() {
@@ -81,7 +82,7 @@ export default function Header() {
           <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className="px-7 py-[0.6rem] rounded text-[13px] font-normal tracking-[0.08em]
+              className="px-5 py-[0.6rem] rounded text-[13px] font-normal tracking-[0.08em]
                          bg-[#C9A87C] text-[#0C0A07]
                          transition-all duration-300
                          hover:bg-[#D8BA90] hover:shadow-[0_4px_24px_rgba(201,168,124,0.55)]"
