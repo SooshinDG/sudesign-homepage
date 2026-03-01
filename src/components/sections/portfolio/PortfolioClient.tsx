@@ -20,9 +20,9 @@ export default function PortfolioClient() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`text-sm tracking-wide transition-all duration-200 ${
+            className={`py-2 px-1 text-sm tracking-wide transition-all duration-200 ${
               active === cat
-                ? 'text-dark border-b border-dark pb-px'
+                ? 'text-dark border-b border-dark'
                 : 'text-dark-soft/70 hover:text-dark'
             }`}
           >

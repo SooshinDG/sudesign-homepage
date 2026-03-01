@@ -3,13 +3,13 @@ import { CONTACT } from '@/data/contact'
 
 export default function MobileCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-warm-50 border-t border-border">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-warm-50 border-t border-border safe-bottom">
       <div className="grid grid-cols-3 divide-x divide-border">
 
         {/* Phone */}
         <a
           href={CONTACT.phoneHref}
-          className="flex flex-col items-center justify-center gap-1 py-3.5 text-dark-soft hover:bg-warm-200 transition-colors active:bg-warm-200"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-dark-soft hover:bg-warm-200 transition-colors active:bg-warm-200"
           aria-label="전화 문의"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -23,7 +23,7 @@ export default function MobileCTA() {
           href={CONTACT.kakao}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 py-3.5 text-dark-soft hover:bg-warm-200 transition-colors active:bg-warm-200"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-dark-soft hover:bg-warm-200 transition-colors active:bg-warm-200"
           aria-label="카카오톡 상담"
         >
           {/* KakaoTalk chat bubble icon */}
@@ -36,7 +36,7 @@ export default function MobileCTA() {
         {/* Online consultation */}
         <Link
           href="/contact"
-          className="flex flex-col items-center justify-center gap-1 py-3.5 bg-dark text-white hover:bg-dark-soft transition-colors active:bg-dark-soft"
+          className="flex flex-col items-center justify-center gap-1 py-4 bg-dark text-white hover:bg-dark-soft transition-colors active:bg-dark-soft"
           aria-label="무료 상담 신청"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

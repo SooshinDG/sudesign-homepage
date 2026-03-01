@@ -144,7 +144,7 @@ export default function Hero() {
             <div className="hero-enter hero-enter-3 flex items-center gap-7">
               <Link
                 href="/portfolio"
-                className="group flex items-center gap-2 text-sm text-warm-400/70
+                className="group flex items-center gap-2 py-3 text-sm text-warm-400/70
                            hover:text-white/90 transition-colors duration-300 tracking-wide"
               >
                 포트폴리오 보기
@@ -163,7 +163,7 @@ export default function Hero() {
 
               <Link
                 href="/contact"
-                className="group flex items-center gap-2 text-sm text-warm-400/70
+                className="group flex items-center gap-2 py-3 text-sm text-warm-400/70
                            hover:text-white/90 transition-colors duration-300 tracking-wide"
               >
                 무료 상담 신청

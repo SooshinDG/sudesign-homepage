@@ -155,3 +155,8 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll-flow { animation: none; top: 30%; opacity: 0.5; }
 }
+
+/* ── Safe-area bottom inset (notched phones) ── */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

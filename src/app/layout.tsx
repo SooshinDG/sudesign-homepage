@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
@@ -12,6 +12,13 @@ const notoSansKR = Noto_Sans_KR({
   variable: '--font-noto-sans-kr',
   preload: false,
 })
+
+// Enables safe-area-inset support on notched phones (iPhone X+)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 export const metadata: Metadata = {
   title: {
@@ -38,8 +45,8 @@ export default function RootLayout({
     <html lang="ko" className={notoSansKR.variable}>
       <body className="font-sans">
         <Header />
-        {/* pb-16 on mobile for the fixed bottom CTA bar */}
-        <main className="pb-16 md:pb-0">{children}</main>
+        {/* pb-20 on mobile clears the fixed bottom CTA bar + safe-area */}
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileCTA />
       </body>
