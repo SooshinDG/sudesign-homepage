@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import DirectionMap from '@/components/sections/location/DirectionMap'
 
 export const metadata: Metadata = {
   title: '오시는 길 | 수디자인',
-  description: '서울특별시 구로구 구로동 685-124번지 상가동 중앙하이츠아파트 101호. 구일역 1번 출구에서 도보 7분.',
+  description: '서울특별시 구로구 구로동 685-124번지 상가동 중앙하이츠아파트 101호. 구일역 1번 출구에서 도보 8분.',
 }
 
-const NAVER_PLACE = 'https://naver.me/Gctp47NQ'
+const NAVER_PLACE      = 'https://naver.me/Gctp47NQ'
 const NAVER_DIRECTIONS = 'https://map.naver.com/v5/search/서울특별시+구로구+구로동+685-124번지+중앙하이츠아파트'
 
 const ArrowIcon = () => (
@@ -42,93 +43,108 @@ export default function LocationPage() {
       {/* ── Content ── */}
       <section className="section-padding-sm">
         <div className="container-main">
-          <div className="max-w-xl">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
 
-            {/* Address */}
-            <div className="mb-8">
-              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주소</p>
-              <address className="not-italic text-dark-soft text-[1.05rem] leading-[1.85] font-medium">
-                서울특별시 구로구 구로동<br />
-                685-124번지 상가동<br />
-                중앙하이츠아파트 101호
-              </address>
-            </div>
+            {/* ── Left: info column ── */}
+            <div>
 
-            <div className="w-10 h-px bg-border mb-8" />
+              {/* Address */}
+              <div className="mb-8">
+                <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주소</p>
+                <address className="not-italic text-dark-soft text-[1.05rem] leading-[1.85] font-medium">
+                  서울특별시 구로구 구로동<br />
+                  685-124번지 상가동<br />
+                  중앙하이츠아파트 101호
+                </address>
+              </div>
 
-            {/* Transit */}
-            <div className="mb-10">
-              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">대중교통</p>
-              <div className="flex items-start gap-3">
-                <span className="mt-0.5 w-5 h-5 rounded-full bg-[#C9A87C]/15 flex items-center justify-center shrink-0">
-                  <svg className="w-2.5 h-2.5 text-[#C9A87C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </span>
-                <p className="text-dark-soft/80 text-sm leading-[1.85]">
-                  지하철 <strong className="text-dark-soft font-semibold">구일역</strong> 1번 출구에서<br />
-                  도보 약 <strong className="text-dark-soft font-semibold">8분</strong>
+              <div className="w-10 h-px bg-border mb-8" />
+
+              {/* Transit */}
+              <div className="mb-10">
+                <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">대중교통</p>
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 w-5 h-5 rounded-full bg-[#C9A87C]/15 flex items-center justify-center shrink-0">
+                    <svg className="w-2.5 h-2.5 text-[#C9A87C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  </span>
+                  <p className="text-dark-soft/80 text-sm leading-[1.85]">
+                    지하철 <strong className="text-dark-soft font-semibold">구일역</strong> 1번 출구에서<br />
+                    도보 약 <strong className="text-dark-soft font-semibold">8분</strong>
+                  </p>
+                </div>
+              </div>
+
+              {/* Naver CTAs */}
+              <div className="flex flex-wrap gap-3 mb-12">
+                <a
+                  href={NAVER_PLACE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded
+                             bg-[#03C75A] text-white text-[13px] font-normal tracking-[0.06em]
+                             hover:bg-[#02b350] hover:shadow-[0_4px_20px_rgba(3,199,90,0.35)]
+                             transition-all duration-300"
+                >
+                  네이버 플레이스 보기
+                  <ExternalIcon />
+                </a>
+                <a
+                  href={NAVER_DIRECTIONS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded
+                             bg-[#C9A87C] text-[#0C0A07] text-[13px] font-normal tracking-[0.06em]
+                             hover:bg-[#D8BA90] hover:shadow-[0_4px_20px_rgba(201,168,124,0.4)]
+                             transition-all duration-300"
+                >
+                  네이버 지도 길찾기
+                  <ArrowIcon />
+                </a>
+              </div>
+
+              <div className="w-10 h-px bg-border mb-8" />
+
+              {/* Parking */}
+              <div className="mb-10">
+                <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주차 안내</p>
+                <p className="text-sm text-dark-soft/75 leading-[1.85]">
+                  매장 앞 도로변 주차 가능합니다.
                 </p>
               </div>
+
+              <div className="w-10 h-px bg-border mb-8" />
+
+              {/* Office hours */}
+              <div>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">운영 시간</p>
+                <ul className="space-y-2 text-sm text-dark-soft/70 leading-relaxed max-w-[14rem]">
+                  <li className="flex justify-between gap-6">
+                    <span>평일</span>
+                    <span className="text-dark-soft">09:00 – 18:00</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>토요일</span>
+                    <span className="text-dark-soft">10:00 – 15:00</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>일요일 · 공휴일</span>
+                    <span className="text-muted">휴무</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
 
-            {/* Naver CTAs */}
-            <div className="flex flex-wrap gap-3 mb-12">
-              <a
-                href={NAVER_PLACE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-5 py-3 rounded
-                           bg-[#03C75A] text-white text-[13px] font-normal tracking-[0.06em]
-                           hover:bg-[#02b350] hover:shadow-[0_4px_20px_rgba(3,199,90,0.35)]
-                           transition-all duration-300"
-              >
-                네이버 플레이스 보기
-                <ExternalIcon />
-              </a>
-              <a
-                href={NAVER_DIRECTIONS}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-5 py-3 rounded
-                           bg-[#C9A87C] text-[#0C0A07] text-[13px] font-normal tracking-[0.06em]
-                           hover:bg-[#D8BA90] hover:shadow-[0_4px_20px_rgba(201,168,124,0.4)]
-                           transition-all duration-300"
-              >
-                네이버 지도 길찾기
-                <ArrowIcon />
-              </a>
-            </div>
-
-            <div className="w-10 h-px bg-border mb-8" />
-
-            {/* Parking / Building access */}
-            <div className="mb-10">
-              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주차 안내</p>
-              <p className="text-sm text-dark-soft/75 leading-[1.85]">
-                매장 앞 도로변 주차 가능합니다.
+            {/* ── Right: illustrated direction map ── */}
+            <div className="lg:sticky lg:top-32">
+              <div className="aspect-[4/3] rounded-sm overflow-hidden border border-border shadow-sm">
+                <DirectionMap />
+              </div>
+              <p className="mt-3 text-[10px] text-muted tracking-[0.08em] text-right">
+                위 지도는 도보 경로를 안내하는 일러스트입니다
               </p>
-            </div>
-
-            <div className="w-10 h-px bg-border mb-8" />
-
-            {/* Office hours */}
-            <div>
-              <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">운영 시간</p>
-              <ul className="space-y-2 text-sm text-dark-soft/70 leading-relaxed max-w-[14rem]">
-                <li className="flex justify-between gap-6">
-                  <span>평일</span>
-                  <span className="text-dark-soft">09:00 – 18:00</span>
-                </li>
-                <li className="flex justify-between gap-6">
-                  <span>토요일</span>
-                  <span className="text-dark-soft">10:00 – 15:00</span>
-                </li>
-                <li className="flex justify-between gap-6">
-                  <span>일요일 · 공휴일</span>
-                  <span className="text-muted">휴무</span>
-                </li>
-              </ul>
             </div>
 
           </div>
