@@ -3,7 +3,18 @@ import PortfolioClient from '@/components/sections/portfolio/PortfolioClient'
 
 export const metadata: Metadata = {
   title: '포트폴리오',
-  description: '수디자인의 다양한 시공 사례를 확인해보세요. 아파트, 주택, 상업공간, 오피스 인테리어 작업을 소개합니다.',
+  description:
+    '수디자인의 아파트 리모델링 및 인테리어 시공 사례를 확인해보세요. 구로구 아파트부터 서울 전역의 주택·상업공간·오피스 인테리어 프로젝트를 카테고리별로 소개합니다.',
+  keywords: [
+    '인테리어 시공 사례',
+    '아파트 리모델링 포트폴리오',
+    '구로구 인테리어 시공',
+    '서울 인테리어 업체 포트폴리오',
+    '아파트 인테리어 사례',
+    '주택 인테리어 사례',
+    '상업공간 인테리어',
+    '수디자인 포트폴리오',
+  ],
 }
 
 export default function PortfolioPage() {

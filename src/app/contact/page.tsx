@@ -3,8 +3,18 @@ import ContactForm from '@/components/sections/contact/ContactForm'
 import { CONTACT } from '@/data/contact'
 
 export const metadata: Metadata = {
-  title: '문의',
-  description: '수디자인에 인테리어 상담을 신청하세요. 담당 디자이너가 24시간 이내로 연락드립니다.',
+  title: '상담 문의',
+  description:
+    '수디자인에 무료 인테리어 상담을 신청하세요. 구로구·서울 아파트 리모델링, 주택 인테리어 견적을 무료로 제공합니다. 담당 디자이너가 24시간 이내 연락드립니다.',
+  keywords: [
+    '인테리어 무료 상담',
+    '구로구 인테리어 상담',
+    '아파트 리모델링 견적',
+    '서울 인테리어 업체 상담',
+    '인테리어 견적 무료',
+    '수디자인 상담',
+    '인테리어 문의',
+  ],
 }
 
 const contactInfo = [
