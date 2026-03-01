@@ -82,8 +82,7 @@ export default function Hero() {
                          font-bold text-dark leading-[1.05] mb-8 md:mb-10"
               style={{
                 letterSpacing: '-0.025em',
-                WebkitTextStroke: '0.3px rgba(255,255,255,0.25)',
-                textShadow: '0 0 14px rgba(255,255,255,0.95), 0 1px 2px rgba(0,0,0,0.10)',
+                textShadow: '0 2px 10px rgba(0,0,0,0.15)',
               }}
             >
               공간이
@@ -97,7 +96,6 @@ export default function Hero() {
             <p
               className="hero-enter hero-enter-2
                          text-dark/80 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6"
-              style={{ textShadow: '0 0 12px rgba(255,255,255,0.90)' }}
             >
               조용히, 그러나 분명하게.
               <br />
@@ -112,7 +110,6 @@ export default function Hero() {
                 href="/portfolio"
                 className="group flex items-center gap-2 py-1 text-sm text-dark/65
                            hover:text-dark/90 transition-colors duration-300 tracking-wide"
-                style={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
               >
                 포트폴리오 보기
                 <svg
@@ -132,7 +129,6 @@ export default function Hero() {
                 href="/contact"
                 className="group flex items-center gap-2 py-1 text-sm text-dark/65
                            hover:text-dark/90 transition-colors duration-300 tracking-wide"
-                style={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
               >
                 무료 상담 신청
                 <svg
