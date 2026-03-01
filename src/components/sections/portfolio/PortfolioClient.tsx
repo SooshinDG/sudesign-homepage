@@ -101,23 +101,40 @@ export default function PortfolioClient() {
               </div>
 
               {/* ── Caption — below image, editorial ── */}
-              <div className="mt-5 md:mt-6 flex items-start justify-between gap-6">
-                <div>
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-dark-soft/70 mb-2.5">
-                    {item.category}&ensp;·&ensp;{item.location}
-                  </p>
-                  <h3
-                    className={`font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200 ${
-                      isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-dark-soft mt-1 leading-relaxed">{item.subtitle}</p>
+              <div className="mt-5 md:mt-6">
+                {/* Title row */}
+                <div className="flex items-start justify-between gap-6 mb-3.5">
+                  <div>
+                    <p className="text-[10px] tracking-[0.28em] uppercase text-dark-soft/70 mb-2.5">
+                      {item.category}&ensp;·&ensp;{item.location}
+                    </p>
+                    <h3
+                      className={`font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200 ${
+                        isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-dark-soft mt-1 leading-relaxed">{item.subtitle}</p>
+                  </div>
                 </div>
 
-                {/* Area — right-aligned */}
-                <p className="text-xs text-dark-soft/65 shrink-0 pt-1 tabular-nums">{item.area}</p>
+                {/* Metadata strip */}
+                <div className="flex items-center gap-0 border-t border-border pt-3.5">
+                  {[
+                    { label: '위치', value: item.location },
+                    { label: '면적', value: item.area },
+                    { label: '기간', value: item.duration },
+                  ].map((meta, i) => (
+                    <div key={meta.label} className="flex items-center">
+                      {i > 0 && <div className="w-px h-3 bg-border mx-4 shrink-0" />}
+                      <div>
+                        <p className="text-[8px] tracking-[0.2em] uppercase text-muted/60 mb-0.5">{meta.label}</p>
+                        <p className="text-[11px] text-dark-soft/80 tabular-nums">{meta.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </article>
             </Link>
