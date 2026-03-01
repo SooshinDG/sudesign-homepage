@@ -117,7 +117,7 @@ export default function Hero() {
             {/* Short emotional headline */}
             <h1
               className="hero-enter hero-enter-1
-                         text-[3.4rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7rem]
+                         text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
                          font-bold text-white leading-[1.05] mb-10 md:mb-14"
               style={{
                 letterSpacing: '-0.025em',
