@@ -75,72 +75,88 @@ export default function Hero() {
           <div className="w-full max-w-[24rem] md:max-w-[32rem] lg:max-w-[40rem]">
             <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
 
-            {/* Headline */}
-            <h1
-              className="hero-enter hero-enter-1
-                         text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
-                         font-bold text-dark leading-[1.05] mb-8 md:mb-10"
+            {/* ── Headline frosted panel ── */}
+            <div
+              className="hero-enter hero-enter-1 inline-block rounded-2xl mb-8 md:mb-10"
               style={{
-                letterSpacing: '-0.025em',
-                textShadow: '0 2px 10px rgba(0,0,0,0.15)',
+                background: 'rgba(255,255,255,0.32)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255,255,255,0.55)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+                padding: '1.25rem 1.75rem',
               }}
             >
-              공간이
-              <br />
-              <span className="text-[#3B82F6]">삶이</span>
-              <br />
-              됩니다
-            </h1>
+              <h1
+                className="text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
+                           font-bold text-dark leading-[1.05]"
+                style={{ letterSpacing: '-0.025em' }}
+              >
+                공간이
+                <br />
+                <span className="text-[#3B82F6]">삶이</span>
+                <br />
+                됩니다
+              </h1>
+            </div>
 
-            {/* Subtitle */}
-            <p
-              className="hero-enter hero-enter-2
-                         text-dark/80 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6"
+            {/* ── Subcopy frosted panel ── */}
+            <div
+              className="hero-enter hero-enter-2 inline-block rounded-xl mb-11 md:mb-14"
+              style={{
+                background: 'rgba(255,255,255,0.22)',
+                backdropFilter: 'blur(6px)',
+                WebkitBackdropFilter: 'blur(6px)',
+                border: '1px solid rgba(255,255,255,0.40)',
+                boxShadow: '0 2px 14px rgba(0,0,0,0.04)',
+                padding: '1.1rem 1.5rem',
+              }}
             >
-              조용히, 그러나 분명하게.
-              <br />
-              수디자인은 당신의 이야기가 담긴
-              <br />
-              공간을 설계합니다.
-            </p>
+              <p className="text-dark/85 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6">
+                조용히, 그러나 분명하게.
+                <br />
+                수디자인은 당신의 이야기가 담긴
+                <br />
+                공간을 설계합니다.
+              </p>
 
-            {/* CTAs */}
-            <div className="hero-enter hero-enter-3 flex items-center gap-7 mb-11 md:mb-14">
-              <Link
-                href="/portfolio"
-                className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
-              >
-                포트폴리오 보기
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
+              <div className="flex items-center gap-7">
+                <Link
+                  href="/portfolio"
+                  className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                  포트폴리오 보기
+                  <svg
+                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
 
-              <span className="w-px h-3 bg-dark/15 shrink-0" />
+                <span className="w-px h-3 bg-dark/20 shrink-0" />
 
-              <Link
-                href="/contact"
-                className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
-              >
-                무료 상담 신청
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
+                <Link
+                  href="/contact"
+                  className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                  무료 상담 신청
+                  <svg
+                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
 
