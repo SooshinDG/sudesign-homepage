@@ -3,13 +3,13 @@ import { CONTACT } from '@/data/contact'
 
 export default function MobileCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#0B0D12] border-t border-[#252E47] safe-bottom">
-      <div className="grid grid-cols-3 divide-x divide-[#252E47]">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-[#DDE3EC] safe-bottom">
+      <div className="grid grid-cols-3 divide-x divide-[#DDE3EC]">
 
         {/* Phone */}
         <a
           href={CONTACT.phoneHref}
-          className="flex flex-col items-center justify-center gap-1 py-4 text-white/70 hover:bg-warm-200 transition-colors active:bg-warm-200"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-dark/60 hover:bg-warm-200 transition-colors active:bg-warm-200"
           aria-label="전화 문의"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -23,7 +23,7 @@ export default function MobileCTA() {
           href={CONTACT.kakao}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 py-4 text-white/70 hover:bg-warm-200 transition-colors active:bg-warm-200"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-dark/60 hover:bg-warm-200 transition-colors active:bg-warm-200"
           aria-label="카카오톡 상담"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="currentColor">

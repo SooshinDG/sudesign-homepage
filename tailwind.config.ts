@@ -9,22 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: '#0B0D12',
-        'dark-soft': '#111318',
-        muted: '#A1A8B5',
+        dark: '#1A1D23',
+        'dark-soft': '#2C3140',
+        muted: '#6B7280',
         gold: {
           DEFAULT: '#3B82F6',
           light: '#60A5FA',
           dark: '#1E4ED8',
         },
         warm: {
-          50:  '#0E1117',
-          100: '#111318',
-          200: '#161A22',
-          300: '#1E2538',
-          400: '#A1A8B5',
+          50:  '#F7F9FC',
+          100: '#FFFFFF',
+          200: '#F1F4F8',
+          300: '#E2E8F0',
+          400: '#94A3B8',
         },
-        border: '#252E47',
+        border: '#DDE3EC',
       },
       fontFamily: {
         sans: [

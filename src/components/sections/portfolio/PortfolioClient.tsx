@@ -23,8 +23,8 @@ export default function PortfolioClient() {
             onClick={() => setActive(cat)}
             className={`py-2 px-1 text-sm tracking-wide transition-all duration-200 ${
               active === cat
-                ? 'text-white border-b border-white'
-                : 'text-white/50 hover:text-white'
+                ? 'text-dark border-b border-dark'
+                : 'text-dark/45 hover:text-dark'
             }`}
           >
             {cat}
@@ -98,17 +98,17 @@ export default function PortfolioClient() {
               <div className="mt-5 md:mt-6">
                 <div className="flex items-start justify-between gap-6 mb-3.5">
                   <div>
-                    <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-2.5">
+                    <p className="text-[10px] tracking-[0.28em] uppercase text-dark/45 mb-2.5">
                       {item.category}&ensp;·&ensp;{item.location}
                     </p>
                     <h3
-                      className={`font-bold text-white leading-snug group-hover:text-gold transition-colors duration-200 ${
+                      className={`font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200 ${
                         isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
                       }`}
                     >
                       {item.title}
                     </h3>
-                    <p className="text-sm text-white/60 mt-1 leading-relaxed">{item.subtitle}</p>
+                    <p className="text-sm text-dark/55 mt-1 leading-relaxed">{item.subtitle}</p>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export default function PortfolioClient() {
                       {i > 0 && <div className="w-px h-3 bg-border mx-4 shrink-0" />}
                       <div>
                         <p className="text-[8px] tracking-[0.2em] uppercase text-muted/60 mb-0.5">{meta.label}</p>
-                        <p className="text-[11px] text-white/60 tabular-nums">{meta.value}</p>
+                        <p className="text-[11px] text-dark/55 tabular-nums">{meta.value}</p>
                       </div>
                     </div>
                   ))}
@@ -137,7 +137,7 @@ export default function PortfolioClient() {
 
       {/* Empty state */}
       {filtered.length === 0 && (
-        <div className="py-28 text-center text-white/40 text-sm tracking-widest uppercase">
+        <div className="py-28 text-center text-dark/35 text-sm tracking-widest uppercase">
           해당 카테고리의 프로젝트가 없습니다
         </div>
       )}

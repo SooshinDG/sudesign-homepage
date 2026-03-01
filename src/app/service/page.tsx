@@ -79,7 +79,7 @@ export default function ServicePage() {
                   </p>
 
                   {/* Title */}
-                  <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-white leading-snug mb-3">
+                  <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-dark leading-snug mb-3">
                     {service.title}
                   </h2>
 
@@ -92,7 +92,7 @@ export default function ServicePage() {
                   <div className="w-7 h-px bg-gold/40 mb-10" />
 
                   {/* Description */}
-                  <p className="text-white/70 text-sm leading-loose mb-10">
+                  <p className="text-dark/65 text-sm leading-loose mb-10">
                     {service.description}
                   </p>
 

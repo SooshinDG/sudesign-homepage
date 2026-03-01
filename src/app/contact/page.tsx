@@ -89,7 +89,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
             {/* Contact info */}
             <div className="lg:col-span-1">
-              <h2 className="text-base font-bold text-white mb-8 tracking-wide">연락처 정보</h2>
+              <h2 className="text-base font-bold text-dark mb-8 tracking-wide">연락처 정보</h2>
               <div className="space-y-7">
                 {contactInfo.map((info) => (
                   <div key={info.label} className="flex items-start gap-4">
@@ -104,12 +104,12 @@ export default function ContactPage() {
                           {...('external' in info && info.external
                             ? { target: '_blank', rel: 'noopener noreferrer' }
                             : {})}
-                          className="text-sm text-white/80 hover:text-gold transition-colors"
+                          className="text-sm text-dark/75 hover:text-gold transition-colors"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-white/80">{info.value}</p>
+                        <p className="text-sm text-dark/75">{info.value}</p>
                       )}
                       <p className="text-xs text-muted mt-0.5">{info.note}</p>
                     </div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
 
               {/* Quick notice */}
               <div className="mt-10 p-6 bg-warm-300 border-l-2 border-gold">
-                <p className="text-sm font-medium text-white mb-3">상담 전 알아두세요</p>
+                <p className="text-sm font-medium text-dark mb-3">상담 전 알아두세요</p>
                 <ul className="text-xs text-muted space-y-2 leading-loose">
                   <li>무료 상담 후 견적서를 무료로 제공합니다.</li>
                   <li>현장 방문 측정은 서울·경기 지역 무료입니다.</li>
@@ -130,7 +130,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-2 bg-warm-100 border border-border p-8 md:p-12">
-              <h2 className="text-base font-bold text-white mb-1.5 tracking-wide">상담 신청서</h2>
+              <h2 className="text-base font-bold text-dark mb-1.5 tracking-wide">상담 신청서</h2>
               <p className="text-sm text-muted mb-8 leading-loose">
                 아래 양식을 작성해 주시면 담당 디자이너가 직접 연락드립니다.
               </p>

@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <span className="text-xl font-bold tracking-tight">
-                수<span className="text-gold">디자인</span>
+                <span className="text-gold">秀</span>디자인
               </span>
             </Link>
             <p className="text-white/50 text-sm leading-loose max-w-sm mb-8">

@@ -9,7 +9,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#0B0D12] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-[#F7F9FC] overflow-hidden">
 
       {/* ── Background layers ── */}
 
@@ -27,71 +27,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Dark scrim */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(11,13,18,0.62)' }}
-      />
-
-      {/* Bottom gradient */}
+      {/* Very light top scrim — keeps nav text readable */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(8,10,15,0.97) 0%, rgba(8,10,15,0.78) 28%, rgba(8,10,15,0.22) 56%, transparent 80%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 22%)',
         }}
       />
 
-      {/* Top gradient — slight header darkening */}
+      {/* White gradient at bottom — reveals headline on bright surface */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(8,10,15,0.50) 0%, transparent 30%)',
+            'linear-gradient(to top, rgba(247,249,252,0.98) 0%, rgba(247,249,252,0.88) 22%, rgba(247,249,252,0.50) 44%, transparent 68%)',
         }}
       />
-
-      {/* Cinematic edge vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 68% 68% at 38% 52%, transparent 28%, rgba(4,6,12,0.72) 100%)',
-        }}
-      />
-
-      {/* Headline ambient light — broad blue field */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 58% 62% at 16% 65%, rgba(59,130,246,0.15) 0%, transparent 72%)',
-        }}
-      />
-
-      {/* Headline core light — tight blue hot spot */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 22% 26% at 10% 66%, rgba(59,130,246,0.10) 0%, transparent 62%)',
-        }}
-      />
-
-      {/* Ground spill */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 52% 18% at 18% 94%, rgba(30,78,216,0.07) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* Blue ambient bleed — top-right */}
-      <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-[#3B82F6]/12 via-[#3B82F6]/4 to-transparent pointer-events-none" />
-
-      {/* Blue ambient bleed — bottom-left */}
-      <div className="absolute bottom-0 left-0 w-2/5 h-1/2 bg-gradient-to-tr from-[#3B82F6]/6 to-transparent pointer-events-none" />
 
       {/* Film grain texture */}
       <div
@@ -118,21 +70,18 @@ export default function Hero() {
             <h1
               className="hero-enter hero-enter-1
                          text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
-                         font-bold text-white leading-[1.05] mb-10 md:mb-14"
-              style={{
-                letterSpacing: '-0.025em',
-                textShadow: '0 2px 80px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.7)',
-              }}
+                         font-bold text-dark leading-[1.05] mb-10 md:mb-14"
+              style={{ letterSpacing: '-0.025em' }}
             >
               공간이
               <br />
-              <span className="text-[#60A5FA]">삶이</span>
+              <span className="text-[#3B82F6]">삶이</span>
               <br />
               됩니다
             </h1>
 
             {/* Subtitle */}
-            <p className="hero-enter hero-enter-2 text-warm-400/85 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
+            <p className="hero-enter hero-enter-2 text-dark/55 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
               조용히, 그러나 분명하게.
               <br />
               수디자인은 당신의 이야기가 담긴
@@ -144,8 +93,8 @@ export default function Hero() {
             <div className="hero-enter hero-enter-3 flex items-center gap-7">
               <Link
                 href="/portfolio"
-                className="group flex items-center gap-2 py-3 text-sm text-warm-400/70
-                           hover:text-white/90 transition-colors duration-300 tracking-wide"
+                className="group flex items-center gap-2 py-3 text-sm text-dark/55
+                           hover:text-dark/85 transition-colors duration-300 tracking-wide"
               >
                 포트폴리오 보기
                 <svg
@@ -159,12 +108,12 @@ export default function Hero() {
                 </svg>
               </Link>
 
-              <span className="w-px h-3 bg-white/15 shrink-0" />
+              <span className="w-px h-3 bg-dark/15 shrink-0" />
 
               <Link
                 href="/contact"
-                className="group flex items-center gap-2 py-3 text-sm text-warm-400/70
-                           hover:text-white/90 transition-colors duration-300 tracking-wide"
+                className="group flex items-center gap-2 py-3 text-sm text-dark/55
+                           hover:text-dark/85 transition-colors duration-300 tracking-wide"
               >
                 무료 상담 신청
                 <svg
@@ -184,7 +133,7 @@ export default function Hero() {
           <div className="hero-enter hero-enter-3 hidden lg:flex flex-col items-center gap-5 pb-1 select-none">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-white/10" />
             <p
-              className="text-[9px] text-white/18 tracking-[0.5em] uppercase font-light"
+              className="text-[9px] text-dark/20 tracking-[0.5em] uppercase font-light"
               style={{ writingMode: 'vertical-rl', letterSpacing: '0.5em' }}
             >
               Since 2016 · Seoul
@@ -196,18 +145,18 @@ export default function Hero() {
 
       {/* ── Bottom stats strip ── */}
       <div className="hero-enter hero-enter-4 container-main relative z-10 pb-9 md:pb-11">
-        <div className="border-t border-white/[0.07] pt-6 flex items-center">
+        <div className="border-t border-dark/[0.08] pt-6 flex items-center">
 
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center">
               {i > 0 && (
-                <div className="w-px h-4 bg-white/10 mx-6 md:mx-10 shrink-0" />
+                <div className="w-px h-4 bg-dark/10 mx-6 md:mx-10 shrink-0" />
               )}
               <div>
-                <p className="text-base md:text-lg font-light text-white/80 tracking-tight leading-none">
+                <p className="text-base md:text-lg font-light text-dark/75 tracking-tight leading-none">
                   {stat.num}
                 </p>
-                <p className="text-[10px] text-white/45 mt-1.5 tracking-[0.22em] uppercase">
+                <p className="text-[10px] text-dark/40 mt-1.5 tracking-[0.22em] uppercase">
                   {stat.label}
                 </p>
               </div>
@@ -220,14 +169,14 @@ export default function Hero() {
       {/* ── Atmospheric scroll indicator ── */}
       <div className="hero-enter hero-enter-4 absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10
                       flex flex-col items-center gap-3 pointer-events-none select-none">
-        <span className="text-[8px] tracking-[0.45em] uppercase text-white/22">Scroll</span>
+        <span className="text-[8px] tracking-[0.45em] uppercase text-dark/25">Scroll</span>
         <div className="relative w-px h-14 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-white/8 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/14 via-dark/8 to-transparent" />
           <div
             className="hero-scroll-flow absolute w-full"
             style={{
               height: '45%',
-              background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.55), transparent)',
+              background: 'linear-gradient(to bottom, transparent, rgba(26,29,35,0.45), transparent)',
             }}
           />
         </div>

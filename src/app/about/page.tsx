@@ -90,7 +90,7 @@ export default function AboutPage() {
             {/* Text */}
             <div>
               <span className="section-label">Our Story</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-8 leading-snug">
                 공간이 삶을 바꾼다는
                 <br />
                 믿음으로 시작했습니다
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   key={stat.label}
                   className="p-7 md:p-8 bg-warm-300 border border-border text-center"
                 >
-                  <p className="text-2xl md:text-3xl font-light text-white mb-1.5 tracking-tight">
+                  <p className="text-2xl md:text-3xl font-light text-dark mb-1.5 tracking-tight">
                     {stat.num}
                   </p>
                   <p className="text-xs text-muted tracking-wider">{stat.label}</p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
         <div className="container-main">
           <div className="mb-14 md:mb-20">
             <span className="section-label">Team</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-dark">
               수디자인 팀
             </h2>
           </div>
@@ -165,15 +165,15 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-warm-300 border border-border p-8 md:p-10"
+                className="bg-warm-100 border border-border p-8 md:p-10"
               >
-                <div className="w-12 h-12 bg-warm-200 flex items-center justify-center mb-6 text-white font-medium text-sm">
+                <div className="w-12 h-12 bg-warm-300 flex items-center justify-center mb-6 text-dark font-medium text-sm">
                   {member.initial}
                 </div>
-                <h3 className="text-base font-bold text-white">{member.name}</h3>
+                <h3 className="text-base font-bold text-dark">{member.name}</h3>
                 <p className="text-gold text-xs tracking-wide mt-1 mb-0.5">{member.role}</p>
                 <p className="text-muted text-xs mb-5">{member.experience}</p>
-                <p className="text-white/70 text-sm leading-loose">{member.description}</p>
+                <p className="text-dark/65 text-sm leading-loose">{member.description}</p>
               </div>
             ))}
           </div>

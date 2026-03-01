@@ -34,7 +34,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         solid
-          ? 'bg-[#0B0D12]/95 backdrop-blur-md border-b border-[#1E2538]/70'
+          ? 'bg-white/96 backdrop-blur-md border-b border-[#DDE3EC]'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -43,16 +43,12 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center leading-none">
-            <span
-              className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
-                solid ? 'text-white' : 'text-white/95'
-              }`}
-            >
-              수
+            <span className="text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] text-[#3B82F6]">
+              秀
             </span>
             <span
               className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
-                solid ? 'text-gold' : 'text-[#3B82F6]'
+                solid ? 'text-dark' : 'text-white/90'
               }`}
             >
               디자인
@@ -66,9 +62,13 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`text-[15px] font-normal tracking-[0.06em] transition-colors duration-300 ${
-                  pathname === link.href
-                    ? 'text-gold'
-                    : 'text-white/60 hover:text-white'
+                  solid
+                    ? pathname === link.href
+                      ? 'text-dark'
+                      : 'text-dark/50 hover:text-[#3B82F6]'
+                    : pathname === link.href
+                      ? 'text-white'
+                      : 'text-white/55 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -97,17 +97,17 @@ export default function Header() {
             aria-expanded={isOpen}
           >
             <span
-              className={`block w-6 h-px transition-all duration-300 origin-center bg-white/80 ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${solid ? 'bg-dark/70' : 'bg-white/80'} ${
                 isOpen ? 'rotate-45 translate-y-[7px]' : ''
               }`}
             />
             <span
-              className={`block w-4 h-px transition-all duration-300 bg-white/80 ${
+              className={`block w-4 h-px transition-all duration-300 ${solid ? 'bg-dark/70' : 'bg-white/80'} ${
                 isOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-6 h-px transition-all duration-300 origin-center bg-white/80 ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${solid ? 'bg-dark/70' : 'bg-white/80'} ${
                 isOpen ? '-rotate-45 -translate-y-[7px]' : ''
               }`}
             />
@@ -117,19 +117,19 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-[#0B0D12]/98 backdrop-blur-md ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-white/97 backdrop-blur-md ${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <nav className="container-main py-5 pb-7 border-t border-[#1E2538]/60">
+        <nav className="container-main py-5 pb-7 border-t border-[#DDE3EC]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`flex items-center py-4 text-sm tracking-wide border-b border-[#1E2538]/50 last:border-0 transition-colors ${
+              className={`flex items-center py-4 text-sm tracking-wide border-b border-[#DDE3EC] last:border-0 transition-colors ${
                 pathname === link.href
-                  ? 'text-gold'
-                  : 'text-white/60 hover:text-white'
+                  ? 'text-[#3B82F6]'
+                  : 'text-dark/60 hover:text-dark'
               }`}
             >
               {link.label}

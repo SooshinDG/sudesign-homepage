@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 md:mb-18">
           <div>
             <span className="section-label">Portfolio</span>
-            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-white leading-snug">
+            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-dark leading-snug">
               주요 시공 사례
             </h2>
           </div>

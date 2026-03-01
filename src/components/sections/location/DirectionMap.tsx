@@ -1,6 +1,6 @@
 /**
  * DirectionMap — custom illustrated walking-direction schematic.
- * Rebranded to deep blue identity (#0B0D12 bg, #3B82F6 accent).
+ * Light luxury palette (warm beige, blue accent).
  * Aspect ratio 4:3  (viewBox 480 × 360)
  *
  * Route depicted:
@@ -16,40 +16,40 @@ export default function DirectionMap() {
     >
       <defs>
         <filter id="dm-card-shadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000814" floodOpacity="0.5" />
+          <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#B8A99A" floodOpacity="0.25" />
         </filter>
         <filter id="dm-pin-glow" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="3" stdDeviation="6" floodColor="#3B82F6" floodOpacity="0.45" />
+          <feDropShadow dx="0" dy="3" stdDeviation="6" floodColor="#3B82F6" floodOpacity="0.30" />
         </filter>
       </defs>
 
       {/* ── Background ── */}
-      <rect width="480" height="360" fill="#0E1117" />
+      <rect width="480" height="360" fill="#F2EDE4" />
 
       {/* ── City blocks ── */}
-      <rect x="0"   y="0"   width="333" height="194" fill="#161A22" />
-      <rect x="360" y="0"   width="120" height="194" fill="#161A22" />
-      <rect x="0"   y="221" width="333" height="139" fill="#161A22" />
-      <rect x="360" y="221" width="120" height="139" fill="#161A22" />
+      <rect x="0"   y="0"   width="333" height="194" fill="#EAE4DA" />
+      <rect x="360" y="0"   width="120" height="194" fill="#EAE4DA" />
+      <rect x="0"   y="221" width="333" height="139" fill="#EAE4DA" />
+      <rect x="360" y="221" width="120" height="139" fill="#EAE4DA" />
 
       {/* ── Secondary road lines ── */}
-      <line x1="0"   y1="122" x2="333" y2="122" stroke="#252E47" strokeWidth="0.5" />
-      <line x1="172" y1="0"   x2="172" y2="194" stroke="#252E47" strokeWidth="0.5" />
+      <line x1="0"   y1="122" x2="333" y2="122" stroke="#D4CAC0" strokeWidth="0.5" />
+      <line x1="172" y1="0"   x2="172" y2="194" stroke="#D4CAC0" strokeWidth="0.5" />
 
       {/* ── Main roads ── */}
-      <rect x="0"   y="194" width="480" height="27" fill="#1A2035" />
-      <rect x="333" y="0"   width="27"  height="360" fill="#1A2035" />
+      <rect x="0"   y="194" width="480" height="27" fill="#E0D9CF" />
+      <rect x="333" y="0"   width="27"  height="360" fill="#E0D9CF" />
 
       {/* Road edge lines */}
-      <line x1="0"   y1="194" x2="480" y2="194" stroke="#252E47" strokeWidth="0.7" />
-      <line x1="0"   y1="221" x2="480" y2="221" stroke="#252E47" strokeWidth="0.7" />
-      <line x1="333" y1="0"   x2="333" y2="360" stroke="#252E47" strokeWidth="0.7" />
-      <line x1="360" y1="0"   x2="360" y2="360" stroke="#252E47" strokeWidth="0.7" />
+      <line x1="0"   y1="194" x2="480" y2="194" stroke="#C8BFB4" strokeWidth="0.7" />
+      <line x1="0"   y1="221" x2="480" y2="221" stroke="#C8BFB4" strokeWidth="0.7" />
+      <line x1="333" y1="0"   x2="333" y2="360" stroke="#C8BFB4" strokeWidth="0.7" />
+      <line x1="360" y1="0"   x2="360" y2="360" stroke="#C8BFB4" strokeWidth="0.7" />
 
       {/* Road centre dashes */}
-      <line x1="0"   y1="207" x2="118" y2="207" stroke="#252E47" strokeWidth="0.5" strokeDasharray="9,9" />
-      <line x1="360" y1="207" x2="480" y2="207" stroke="#252E47" strokeWidth="0.5" strokeDasharray="9,9" />
-      <line x1="346" y1="221" x2="346" y2="360" stroke="#252E47" strokeWidth="0.5" strokeDasharray="9,9" />
+      <line x1="0"   y1="207" x2="118" y2="207" stroke="#C8BFB4" strokeWidth="0.5" strokeDasharray="9,9" />
+      <line x1="360" y1="207" x2="480" y2="207" stroke="#C8BFB4" strokeWidth="0.5" strokeDasharray="9,9" />
+      <line x1="346" y1="221" x2="346" y2="360" stroke="#C8BFB4" strokeWidth="0.5" strokeDasharray="9,9" />
 
       {/* ── Walking path (blue dashed) ── */}
       <path
@@ -67,12 +67,12 @@ export default function DirectionMap() {
       <polygon points="341,163 346,152 351,163" fill="#3B82F6" opacity="0.8" />
 
       {/* Walking time badge */}
-      <rect x="172" y="183" width="84" height="23" rx="11.5" fill="#0F2A5A" />
+      <rect x="172" y="183" width="84" height="23" rx="11.5" fill="#DBEAFE" />
       <text
         x="214" y="198"
         textAnchor="middle"
         fontSize="9.5"
-        fill="#60A5FA"
+        fill="#1E4ED8"
         fontWeight="500"
         letterSpacing="0.05em"
       >
@@ -80,12 +80,12 @@ export default function DirectionMap() {
       </text>
 
       {/* ── Station ── */}
-      <circle cx="68" cy="207" r="21" fill="#0F2A5A" />
+      <circle cx="68" cy="207" r="21" fill="#DBEAFE" />
       <text
         x="68" y="212"
         textAnchor="middle"
         fontSize="15"
-        fill="white"
+        fill="#1E4ED8"
         fontWeight="700"
       >
         M
@@ -93,12 +93,12 @@ export default function DirectionMap() {
 
       {/* Connector → exit circle */}
       <line x1="89" y1="207" x2="104" y2="207" stroke="#3B82F6" strokeWidth="1.5" />
-      <circle cx="113" cy="207" r="10" fill="#111318" stroke="#3B82F6" strokeWidth="1.5" />
+      <circle cx="113" cy="207" r="10" fill="#F2EDE4" stroke="#3B82F6" strokeWidth="1.5" />
       <text
         x="113" y="211"
         textAnchor="middle"
         fontSize="8.5"
-        fill="#60A5FA"
+        fill="#1E4ED8"
         fontWeight="700"
       >
         1
@@ -109,7 +109,7 @@ export default function DirectionMap() {
         x="68" y="238"
         textAnchor="middle"
         fontSize="10.5"
-        fill="#E2E8F0"
+        fill="#3D3530"
         fontWeight="700"
         letterSpacing="0.02em"
       >
@@ -119,7 +119,7 @@ export default function DirectionMap() {
         x="113" y="238"
         textAnchor="start"
         fontSize="9.5"
-        fill="#A1A8B5"
+        fill="#8A7E76"
         letterSpacing="0.01em"
       >
         {' '}1번 출구
@@ -135,12 +135,12 @@ export default function DirectionMap() {
       </g>
 
       {/* Destination label card */}
-      <rect x="306" y="112" width="80" height="27" rx="4" fill="#1E2538" filter="url(#dm-card-shadow)" />
+      <rect x="306" y="112" width="80" height="27" rx="4" fill="#FFFFFF" filter="url(#dm-card-shadow)" />
       <text
         x="346" y="129"
         textAnchor="middle"
         fontSize="10.5"
-        fill="#E2E8F0"
+        fill="#1A1D23"
         fontWeight="700"
         letterSpacing="0.04em"
       >
@@ -149,14 +149,14 @@ export default function DirectionMap() {
 
       {/* ── North indicator ── */}
       <g transform="translate(451,30)">
-        <circle cx="0" cy="0" r="14" fill="none" stroke="#3B82F6" strokeWidth="0.9" opacity="0.55" />
-        <polygon points="-3,1 0,-9 3,1" fill="#A1A8B5" />
-        <line x1="0" y1="1" x2="0" y2="7" stroke="#A1A8B5" strokeWidth="1.2" />
+        <circle cx="0" cy="0" r="14" fill="none" stroke="#3B82F6" strokeWidth="0.9" opacity="0.45" />
+        <polygon points="-3,1 0,-9 3,1" fill="#8A7E76" />
+        <line x1="0" y1="1" x2="0" y2="7" stroke="#8A7E76" strokeWidth="1.2" />
         <text
           x="0" y="21"
           textAnchor="middle"
           fontSize="7"
-          fill="#6B7280"
+          fill="#B0A49C"
           fontWeight="500"
           letterSpacing="0.1em"
         >
@@ -168,7 +168,7 @@ export default function DirectionMap() {
       <text
         x="20" y="348"
         fontSize="8"
-        fill="#6B7280"
+        fill="#B0A49C"
         letterSpacing="0.04em"
       >
         * 도보 이동 경로 기준
