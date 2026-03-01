@@ -20,19 +20,50 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
+// Update this to the real production domain before launch
+const BASE_URL = 'https://soodesign.kr'
+
+const SITE_TITLE = '수디자인 | 구로구 아파트 인테리어 · 서울 리모델링 전문'
+const SITE_DESCRIPTION =
+  '수디자인은 서울 구로구를 비롯한 수도권 전역의 아파트 리모델링과 주택 인테리어를 전문으로 하는 인테리어 디자인 스튜디오입니다. 설계부터 시공까지 책임지는 서울 인테리어 업체.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: '수디자인 | 아파트 인테리어 전문',
+    default: SITE_TITLE,
     template: '%s | 수디자인',
   },
-  description:
-    '수디자인은 고객의 라이프스타일에 맞는 감각적인 인테리어를 제공합니다. 아파트, 주택, 상업공간 리모델링 전문 인테리어 디자인 스튜디오.',
-  keywords: ['인테리어', '아파트 리모델링', '수디자인', '인테리어 디자인', '홈 리모델링', '인테리어 시공'],
+  description: SITE_DESCRIPTION,
+  keywords: [
+    '구로구 인테리어',
+    '아파트 리모델링',
+    '서울 인테리어 업체',
+    '인테리어 디자인',
+    '수디자인',
+    '아파트 인테리어',
+    '주택 인테리어',
+    '서울 인테리어',
+    '인테리어 시공',
+    '홈 리모델링',
+    '상업공간 인테리어',
+    '오피스 인테리어',
+    '수도권 인테리어',
+    '인테리어 업체 추천',
+  ],
+  authors: [{ name: '수디자인', url: BASE_URL }],
+  robots: { index: true, follow: true },
   openGraph: {
-    title: '수디자인 | 아파트 인테리어 전문',
-    description: '고객의 라이프스타일에 맞는 감각적인 인테리어를 제공합니다.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: BASE_URL,
+    siteName: '수디자인',
     type: 'website',
     locale: 'ko_KR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
 }
 
