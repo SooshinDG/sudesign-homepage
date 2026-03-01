@@ -45,6 +45,15 @@ export default function Hero() {
         }}
       />
 
+      {/* Organic radial mist — naturally calms photo behind text column */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 46% 58% at 14% 82%, rgba(247,249,252,0.20) 0%, transparent 70%)',
+        }}
+      />
+
       {/* Film grain texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -73,8 +82,8 @@ export default function Hero() {
                          font-bold text-dark leading-[1.05] mb-8 md:mb-10"
               style={{
                 letterSpacing: '-0.025em',
-                textShadow:
-                  '0 0 40px rgba(247,249,252,0.80), 0 1px 6px rgba(0,0,0,0.08)',
+                WebkitTextStroke: '0.3px rgba(255,255,255,0.25)',
+                textShadow: '0 0 14px rgba(255,255,255,0.95), 0 1px 2px rgba(0,0,0,0.10)',
               }}
             >
               공간이
@@ -84,59 +93,58 @@ export default function Hero() {
               됩니다
             </h1>
 
-            {/* Glass panel — tighter, lower opacity behind sub-copy/CTAs only */}
-            <div
+            {/* Subtitle */}
+            <p
               className="hero-enter hero-enter-2
-                         backdrop-blur-sm rounded-sm px-5 pt-4 pb-4 -mx-2 mb-11 md:mb-14"
-              style={{ background: 'rgba(247,249,252,0.28)' }}
+                         text-dark/80 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6"
+              style={{ textShadow: '0 0 12px rgba(255,255,255,0.90)' }}
             >
-              {/* Subtitle */}
-              <p className="text-dark/70 text-sm leading-[2.1] max-w-[20rem] mb-6">
-                조용히, 그러나 분명하게.
-                <br />
-                수디자인은 당신의 이야기가 담긴
-                <br />
-                공간을 설계합니다.
-              </p>
+              조용히, 그러나 분명하게.
+              <br />
+              수디자인은 당신의 이야기가 담긴
+              <br />
+              공간을 설계합니다.
+            </p>
 
-              {/* CTAs */}
-              <div className="flex items-center gap-7">
-                <Link
-                  href="/portfolio"
-                  className="group flex items-center gap-2 py-1 text-sm text-dark/60
-                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
+            {/* CTAs */}
+            <div className="hero-enter hero-enter-3 flex items-center gap-7 mb-11 md:mb-14">
+              <Link
+                href="/portfolio"
+                className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+                style={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
+              >
+                포트폴리오 보기
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
                 >
-                  포트폴리오 보기
-                  <svg
-                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
 
-                <span className="w-px h-3 bg-dark/15 shrink-0" />
+              <span className="w-px h-3 bg-dark/15 shrink-0" />
 
-                <Link
-                  href="/contact"
-                  className="group flex items-center gap-2 py-1 text-sm text-dark/60
-                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
+              <Link
+                href="/contact"
+                className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+                style={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
+              >
+                무료 상담 신청
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
                 >
-                  무료 상담 신청
-                  <svg
-                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
 
