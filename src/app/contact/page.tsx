@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/sections/contact/ContactForm'
+import { CONTACT } from '@/data/contact'
 
 export const metadata: Metadata = {
   title: '문의',
@@ -14,9 +15,21 @@ const contactInfo = [
       </svg>
     ),
     label: '전화 문의',
-    value: '010-0000-0000',
-    href: 'tel:010-0000-0000',
-    note: '평일 09:00 – 18:00',
+    value: CONTACT.phone,
+    href: CONTACT.phoneHref,
+    note: CONTACT.hours,
+  },
+  {
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3C6.477 3 2 6.597 2 11c0 2.719 1.57 5.122 3.956 6.614l-.838 3.111a.375.375 0 00.552.414L9.2 18.94A11.56 11.56 0 0012 19c5.523 0 10-3.597 10-8S17.523 3 12 3z" />
+      </svg>
+    ),
+    label: '카카오톡',
+    value: '카카오톡 채널 바로가기',
+    href: CONTACT.kakao,
+    note: '채팅으로 빠른 상담',
+    external: true,
   },
   {
     icon: (
@@ -25,8 +38,8 @@ const contactInfo = [
       </svg>
     ),
     label: '이메일',
-    value: 'hello@soodesign.kr',
-    href: 'mailto:hello@soodesign.kr',
+    value: CONTACT.email,
+    href: CONTACT.emailHref,
     note: '24시간 이내 회신',
   },
   {
@@ -37,7 +50,7 @@ const contactInfo = [
       </svg>
     ),
     label: '사무실',
-    value: '서울시 강남구 테헤란로 123',
+    value: CONTACT.address,
     href: undefined,
     note: '사전 예약 후 방문',
   },
@@ -78,6 +91,9 @@ export default function ContactPage() {
                       {info.href ? (
                         <a
                           href={info.href}
+                          {...('external' in info && info.external
+                            ? { target: '_blank', rel: 'noopener noreferrer' }
+                            : {})}
                           className="text-sm text-dark hover:text-gold transition-colors"
                         >
                           {info.value}
