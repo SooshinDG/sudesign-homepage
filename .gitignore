@@ -15,6 +15,9 @@ build/
 .env.test.local
 .env.production.local
 
+# Claude Code local config
+.claude/
+
 # misc
 .DS_Store
 *.pem
