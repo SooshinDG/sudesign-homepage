@@ -32,16 +32,25 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 22%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, transparent 20%)',
         }}
       />
 
-      {/* White gradient at bottom — reveals headline on bright surface */}
+      {/* White gradient at bottom — creates bright reading surface */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(247,249,252,0.98) 0%, rgba(247,249,252,0.88) 22%, rgba(247,249,252,0.50) 44%, transparent 68%)',
+            'linear-gradient(to top, rgba(247,249,252,0.98) 0%, rgba(247,249,252,0.90) 24%, rgba(247,249,252,0.55) 46%, transparent 66%)',
+        }}
+      />
+
+      {/* Soft radial bloom behind text column — centre contrast, bright edges */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 54% 62% at 18% 84%, rgba(247,249,252,0.55) 0%, rgba(247,249,252,0.18) 52%, transparent 72%)',
         }}
       />
 
@@ -70,8 +79,12 @@ export default function Hero() {
             <h1
               className="hero-enter hero-enter-1
                          text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
-                         font-bold text-dark leading-[1.05] mb-10 md:mb-14"
-              style={{ letterSpacing: '-0.025em' }}
+                         font-bold text-dark leading-[1.05] mb-8 md:mb-10"
+              style={{
+                letterSpacing: '-0.025em',
+                textShadow:
+                  '0 0 40px rgba(247,249,252,0.80), 0 1px 6px rgba(0,0,0,0.08)',
+              }}
             >
               공간이
               <br />
@@ -80,52 +93,59 @@ export default function Hero() {
               됩니다
             </h1>
 
-            {/* Subtitle */}
-            <p className="hero-enter hero-enter-2 text-dark/55 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
-              조용히, 그러나 분명하게.
-              <br />
-              수디자인은 당신의 이야기가 담긴
-              <br />
-              공간을 설계합니다.
-            </p>
+            {/* Glass panel — subtitle + CTAs */}
+            <div
+              className="hero-enter hero-enter-2
+                         backdrop-blur-md rounded-sm px-5 pt-5 pb-5 -mx-2 mb-11 md:mb-14"
+              style={{ background: 'rgba(247,249,252,0.52)' }}
+            >
+              {/* Subtitle */}
+              <p className="text-dark/65 text-sm leading-[2.1] max-w-[17rem] mb-6">
+                조용히, 그러나 분명하게.
+                <br />
+                수디자인은 당신의 이야기가 담긴
+                <br />
+                공간을 설계합니다.
+              </p>
 
-            {/* CTAs */}
-            <div className="hero-enter hero-enter-3 flex items-center gap-7">
-              <Link
-                href="/portfolio"
-                className="group flex items-center gap-2 py-3 text-sm text-dark/55
-                           hover:text-dark/85 transition-colors duration-300 tracking-wide"
-              >
-                포트폴리오 보기
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
+              {/* CTAs */}
+              <div className="flex items-center gap-7">
+                <Link
+                  href="/portfolio"
+                  className="group flex items-center gap-2 py-1 text-sm text-dark/60
+                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                  포트폴리오 보기
+                  <svg
+                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
 
-              <span className="w-px h-3 bg-dark/15 shrink-0" />
+                <span className="w-px h-3 bg-dark/15 shrink-0" />
 
-              <Link
-                href="/contact"
-                className="group flex items-center gap-2 py-3 text-sm text-dark/55
-                           hover:text-dark/85 transition-colors duration-300 tracking-wide"
-              >
-                무료 상담 신청
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
+                <Link
+                  href="/contact"
+                  className="group flex items-center gap-2 py-1 text-sm text-dark/60
+                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                  무료 상담 신청
+                  <svg
+                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
 

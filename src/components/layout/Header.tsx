@@ -35,7 +35,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         solid
           ? 'bg-white/96 backdrop-blur-md border-b border-[#DDE3EC]'
-          : 'bg-transparent border-b border-transparent'
+          : 'bg-white/12 backdrop-blur-sm border-b border-white/10'
       }`}
     >
       <div className="container-main">
