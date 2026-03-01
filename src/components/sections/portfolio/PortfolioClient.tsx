@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { portfolioItems, categories, type PortfolioCategory } from '@/data/portfolio'
 
 export default function PortfolioClient() {
@@ -41,10 +42,12 @@ export default function PortfolioClient() {
           const isFeature = index % 3 === 0
 
           return (
-            <article
+            <Link
               key={item.id}
-              className={`group ${isFeature ? 'md:col-span-2' : 'md:col-span-1'}`}
+              href={`/portfolio/${item.id}`}
+              className={`group block ${isFeature ? 'md:col-span-2' : 'md:col-span-1'}`}
             >
+            <article>
               {/* ── Image ── */}
               <div
                 className={`relative overflow-hidden bg-warm-200 ${
@@ -104,7 +107,7 @@ export default function PortfolioClient() {
                     {item.category}&ensp;·&ensp;{item.location}
                   </p>
                   <h3
-                    className={`font-bold text-dark leading-snug ${
+                    className={`font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200 ${
                       isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
                     }`}
                   >
@@ -117,6 +120,7 @@ export default function PortfolioClient() {
                 <p className="text-xs text-dark-soft/65 shrink-0 pt-1 tabular-nums">{item.area}</p>
               </div>
             </article>
+            </Link>
           )
         })}
       </div>
