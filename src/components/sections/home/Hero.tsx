@@ -69,106 +69,82 @@ export default function Hero() {
       {/* ── Main content ── */}
       <div className="container-main relative z-10 flex-1 flex flex-col justify-end pb-16 md:pb-20 pt-36 md:pt-44">
 
-        <div className="flex items-end justify-between gap-12 lg:gap-16">
+        {/* Centered content column */}
+        <div className="mx-auto w-full max-w-[24rem] md:max-w-[32rem] lg:max-w-[40rem]">
 
-          {/* Left: editorial text column */}
-          <div className="w-full max-w-[24rem] md:max-w-[32rem] lg:max-w-[40rem]">
-            <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
+          <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
 
-            {/* ── Headline frosted panel ── */}
-            <div
-              className="hero-enter hero-enter-1 inline-block rounded-2xl mb-8 md:mb-10"
-              style={{
-                background: 'rgba(255,255,255,0.32)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.55)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-                padding: '1.25rem 1.75rem',
-              }}
-            >
-              <h1
-                className="text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
-                           font-bold text-dark leading-[1.05]"
-                style={{ letterSpacing: '-0.025em' }}
-              >
-                공간이
-                <br />
-                <span className="text-[#3B82F6]">삶이</span>
-                <br />
-                됩니다
-              </h1>
-            </div>
+          {/* Headline — directly on photo, no panel, no filter on text */}
+          <h1
+            className="hero-enter hero-enter-1
+                       text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
+                       font-bold text-dark leading-[1.05] mb-8 md:mb-10"
+            style={{ letterSpacing: '-0.025em' }}
+          >
+            공간이
+            <br />
+            <span className="text-[#3B82F6]">삶이</span>
+            <br />
+            됩니다
+          </h1>
 
-            {/* ── Subcopy frosted panel ── */}
-            <div
-              className="hero-enter hero-enter-2 inline-block rounded-xl mb-11 md:mb-14"
-              style={{
-                background: 'rgba(255,255,255,0.22)',
-                backdropFilter: 'blur(6px)',
-                WebkitBackdropFilter: 'blur(6px)',
-                border: '1px solid rgba(255,255,255,0.40)',
-                boxShadow: '0 2px 14px rgba(0,0,0,0.04)',
-                padding: '1.1rem 1.5rem',
-              }}
-            >
-              <p className="text-dark/85 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6">
-                조용히, 그러나 분명하게.
-                <br />
-                수디자인은 당신의 이야기가 담긴
-                <br />
-                공간을 설계합니다.
-              </p>
-
-              <div className="flex items-center gap-7">
-                <Link
-                  href="/portfolio"
-                  className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
-                >
-                  포트폴리오 보기
-                  <svg
-                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-
-                <span className="w-px h-3 bg-dark/20 shrink-0" />
-
-                <Link
-                  href="/contact"
-                  className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                             hover:text-dark/90 transition-colors duration-300 tracking-wide"
-                >
-                  무료 상담 신청
-                  <svg
-                    className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: editorial vertical text — desktop only */}
-          <div className="hero-enter hero-enter-3 hidden lg:flex flex-col items-center gap-5 pb-1 select-none shrink-0">
-            <div className="w-px h-20 bg-gradient-to-b from-transparent to-dark/12" />
-            <p
-              className="text-[9px] text-dark/28 tracking-[0.5em] uppercase font-light"
-              style={{ writingMode: 'vertical-rl', letterSpacing: '0.5em' }}
-            >
-              Since 2016 · Seoul
+          {/* Subcopy frosted panel */}
+          <div
+            className="hero-enter hero-enter-2 inline-block rounded-xl mb-11 md:mb-14"
+            style={{
+              background: 'rgba(255,255,255,0.22)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
+              border: '1px solid rgba(255,255,255,0.40)',
+              boxShadow: '0 2px 14px rgba(0,0,0,0.04)',
+              padding: '1.1rem 1.5rem',
+            }}
+          >
+            <p className="text-dark/85 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6">
+              조용히, 그러나 분명하게.
+              <br />
+              수디자인은 당신의 이야기가 담긴
+              <br />
+              공간을 설계합니다.
             </p>
+
+            <div className="flex items-center gap-7">
+              <Link
+                href="/portfolio"
+                className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+              >
+                포트폴리오 보기
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+
+              <span className="w-px h-3 bg-dark/20 shrink-0" />
+
+              <Link
+                href="/contact"
+                className="group flex items-center gap-2 py-1 text-sm text-dark/65
+                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+              >
+                무료 상담 신청
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
         </div>
