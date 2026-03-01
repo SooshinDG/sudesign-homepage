@@ -70,7 +70,7 @@ export default function LocationPage() {
                     </svg>
                   </span>
                   <p className="text-dark/75 text-sm leading-[1.85]">
-                    지하철 <strong className="text-white font-semibold">구일역</strong> 1번 출구에서<br />
+                    지하철 <strong className="font-semibold" style={{ color: '#0052A4' }}>구일역</strong> 1번 출구에서<br />
                     도보 약 <strong className="text-white font-semibold">8분</strong>
                   </p>
                 </div>
