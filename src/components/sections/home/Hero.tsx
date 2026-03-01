@@ -9,11 +9,9 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#F7F9FC] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-[#0E1117] overflow-hidden">
 
-      {/* ── Background layers ── */}
-
-      {/* Real interior photograph — animated drift wrapper */}
+      {/* ── Background: interior photograph ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="hero-atmo absolute" style={{ inset: '-5%' }}>
           <Image
@@ -27,143 +25,142 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Top scrim — nav readability only */}
+      {/* Subtle dark overlay — dims photo just enough for panel to read */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 18%)',
-        }}
-      />
-
-      {/* Bottom white ramp — anchors stats strip, fades out fast */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(to top, rgba(247,249,252,0.94) 0%, rgba(247,249,252,0.60) 14%, rgba(247,249,252,0.18) 32%, transparent 50%)',
-        }}
-      />
-
-      {/* Organic radial mist — naturally calms photo behind text column */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 46% 58% at 14% 82%, rgba(247,249,252,0.20) 0%, transparent 70%)',
+            'linear-gradient(to bottom, rgba(10,13,20,0.38) 0%, rgba(10,13,20,0.22) 60%, rgba(10,13,20,0.48) 100%)',
         }}
       />
 
       {/* Film grain texture */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none opacity-[0.035]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundSize: '300px 300px',
         }}
       />
 
-      {/* Thin horizontal rule */}
-      <div className="absolute top-1/3 left-0 right-0 h-px bg-white/[0.03] pointer-events-none" />
+      {/* ── Main content: vertically + horizontally centered panel ── */}
+      <div className="relative z-10 flex-1 flex items-center justify-center px-4 pt-28 pb-8 md:pt-32 md:pb-10">
 
-      {/* ── Main content ── */}
-      <div className="container-main relative z-10 flex-1 flex flex-col justify-end pb-16 md:pb-20 pt-36 md:pt-44">
-
-        {/* Centered content column */}
-        <div className="mx-auto w-full max-w-[24rem] md:max-w-[32rem] lg:max-w-[40rem]">
-
-          <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
-
-          {/* Headline — directly on photo, no panel, no filter on text */}
-          <h1
-            className="hero-enter hero-enter-1
-                       text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
-                       font-bold text-dark leading-[1.05] mb-8 md:mb-10"
-            style={{ letterSpacing: '-0.025em' }}
-          >
-            공간이
-            <br />
-            <span className="text-[#3B82F6]">삶이</span>
-            <br />
-            됩니다
-          </h1>
-
-          {/* Subcopy frosted panel */}
-          <div
-            className="hero-enter hero-enter-2 inline-block rounded-xl mb-11 md:mb-14"
+        {/* Glass panel */}
+        <div
+          className="hero-enter hero-enter-1 w-full"
+          style={{
+            maxWidth: '520px',
+            background: 'rgba(20, 25, 35, 0.55)',
+            backdropFilter: 'blur(18px)',
+            WebkitBackdropFilter: 'blur(18px)',
+            borderRadius: '24px',
+            border: '1px solid rgba(255,255,255,0.15)',
+            boxShadow: '0 8px 48px rgba(0,0,0,0.28), 0 1px 0 rgba(255,255,255,0.06) inset',
+            padding: '2.5rem 2.75rem',
+          }}
+        >
+          {/* Label */}
+          <span
+            className="hero-enter hero-enter-1 block mb-5 text-[#3B82F6] font-medium"
             style={{
-              background: 'rgba(255,255,255,0.22)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              border: '1px solid rgba(255,255,255,0.40)',
-              boxShadow: '0 2px 14px rgba(0,0,0,0.04)',
-              padding: '1.1rem 1.5rem',
+              fontSize: '10px',
+              letterSpacing: '0.32em',
+              textTransform: 'uppercase',
             }}
           >
-            <p className="text-dark/85 text-sm font-medium leading-[2.1] max-w-[20rem] mb-6">
-              조용히, 그러나 분명하게.
-              <br />
-              수디자인은 당신의 이야기가 담긴
-              <br />
-              공간을 설계합니다.
-            </p>
+            Interior Design Studio
+          </span>
 
-            <div className="flex items-center gap-7">
-              <Link
-                href="/portfolio"
-                className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+          {/* Headline */}
+          <h1
+            className="hero-enter hero-enter-1 font-bold text-white leading-[1.18] mb-5"
+            style={{
+              fontSize: 'clamp(1.9rem, 4.5vw, 2.65rem)',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            공간의 <span style={{ color: '#3B82F6' }}>가치</span>가
+            <br />
+            일상의 품격이 됩니다
+          </h1>
+
+          {/* Divider */}
+          <div
+            className="hero-enter hero-enter-2 mb-5"
+            style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.18)' }}
+          />
+
+          {/* Sub description */}
+          <p
+            className="hero-enter hero-enter-2 leading-[1.85]"
+            style={{
+              fontSize: '13.5px',
+              color: 'rgba(255,255,255,0.78)',
+              maxWidth: '360px',
+              marginBottom: '1.75rem',
+            }}
+          >
+            수디자인은 공간을 꾸미는 것이 아닌,
+            <br />
+            삶의 흐름을 설계합니다.
+          </p>
+
+          {/* CTA links */}
+          <div className="hero-enter hero-enter-3 flex items-center gap-7">
+            <Link
+              href="/portfolio"
+              className="group flex items-center gap-1.5 text-[13px] tracking-wide
+                         text-white/60 hover:text-[#3B82F6] transition-colors duration-300"
+            >
+              포트폴리오 보기
+              <svg
+                className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
               >
-                포트폴리오 보기
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
 
-              <span className="w-px h-3 bg-dark/20 shrink-0" />
+            <span className="w-px h-3 bg-white/[0.18] shrink-0" />
 
-              <Link
-                href="/contact"
-                className="group flex items-center gap-2 py-1 text-sm text-dark/65
-                           hover:text-dark/90 transition-colors duration-300 tracking-wide"
+            <Link
+              href="/contact"
+              className="group flex items-center gap-1.5 text-[13px] tracking-wide
+                         text-white/60 hover:text-[#3B82F6] transition-colors duration-300"
+            >
+              무료 상담 신청
+              <svg
+                className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
               >
-                무료 상담 신청
-                <svg
-                  className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
-
         </div>
       </div>
 
       {/* ── Bottom stats strip ── */}
       <div className="hero-enter hero-enter-4 container-main relative z-10 pb-9 md:pb-11">
-        <div className="border-t border-dark/[0.08] pt-6 flex items-center">
+        <div className="border-t border-white/[0.10] pt-6 flex items-center">
 
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center">
               {i > 0 && (
-                <div className="w-px h-4 bg-dark/10 mx-6 md:mx-10 shrink-0" />
+                <div className="w-px h-4 bg-white/[0.12] mx-6 md:mx-10 shrink-0" />
               )}
               <div>
-                <p className="text-base md:text-lg font-light text-dark/75 tracking-tight leading-none">
+                <p className="text-base md:text-lg font-light text-white/70 tracking-tight leading-none">
                   {stat.num}
                 </p>
-                <p className="text-[10px] text-dark/40 mt-1.5 tracking-[0.22em] uppercase">
+                <p className="text-[10px] text-white/35 mt-1.5 tracking-[0.22em] uppercase">
                   {stat.label}
                 </p>
               </div>
@@ -173,17 +170,17 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Atmospheric scroll indicator ── */}
+      {/* ── Scroll indicator ── */}
       <div className="hero-enter hero-enter-4 absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10
                       flex flex-col items-center gap-3 pointer-events-none select-none">
-        <span className="text-[8px] tracking-[0.45em] uppercase text-dark/25">Scroll</span>
+        <span className="text-[8px] tracking-[0.45em] uppercase text-white/25">Scroll</span>
         <div className="relative w-px h-14 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/14 via-dark/8 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/14 via-white/8 to-transparent" />
           <div
             className="hero-scroll-flow absolute w-full"
             style={{
               height: '45%',
-              background: 'linear-gradient(to bottom, transparent, rgba(26,29,35,0.45), transparent)',
+              background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.40), transparent)',
             }}
           />
         </div>
