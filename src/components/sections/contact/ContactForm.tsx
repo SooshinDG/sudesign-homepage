@@ -74,7 +74,7 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-dark mb-3">상담 신청 완료!</h3>
+        <h3 className="text-2xl font-bold text-white mb-3">상담 신청 완료!</h3>
         <p className="text-muted max-w-sm mx-auto leading-relaxed">
           빠른 시일 내에 담당 디자이너가 직접 연락드리겠습니다.
           <br />
@@ -95,7 +95,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             성함 <span className="text-gold">*</span>
           </label>
           <input
@@ -105,13 +105,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="홍길동"
-            className="w-full px-4 py-4 border border-border text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
+            className="w-full px-4 py-4 border border-border text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 placeholder:text-muted/60"
           />
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             연락처 <span className="text-gold">*</span>
           </label>
           <input
@@ -121,13 +121,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="010-0000-0000"
-            className="w-full px-4 py-4 border border-border text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
+            className="w-full px-4 py-4 border border-border text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 placeholder:text-muted/60"
           />
         </div>
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             이메일
           </label>
           <input
@@ -136,13 +136,13 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             placeholder="example@email.com"
-            className="w-full px-4 py-4 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
+            className="w-full px-4 py-4 border border-border rounded-sm text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 placeholder:text-muted/60"
           />
         </div>
 
         {/* Service type */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             서비스 유형 <span className="text-gold">*</span>
           </label>
           <select
@@ -150,7 +150,7 @@ export default function ContactForm() {
             value={form.serviceType}
             onChange={handleChange}
             required
-            className="w-full px-4 py-4 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 text-dark-soft appearance-none cursor-pointer"
+            className="w-full px-4 py-4 border border-border rounded-sm text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 appearance-none cursor-pointer"
           >
             <option value="">선택해주세요</option>
             {serviceTypes.map((s) => (
@@ -161,7 +161,7 @@ export default function ContactForm() {
 
         {/* Area */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             평수
           </label>
           <input
@@ -170,20 +170,20 @@ export default function ContactForm() {
             value={form.area}
             onChange={handleChange}
             placeholder="예: 32평"
-            className="w-full px-4 py-4 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400"
+            className="w-full px-4 py-4 border border-border rounded-sm text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 placeholder:text-muted/60"
           />
         </div>
 
         {/* Budget */}
         <div>
-          <label className="block text-sm font-medium text-dark mb-1.5">
+          <label className="block text-sm font-medium text-white/90 mb-1.5">
             예산 범위
           </label>
           <select
             name="budget"
             value={form.budget}
             onChange={handleChange}
-            className="w-full px-4 py-4 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 text-dark-soft appearance-none cursor-pointer"
+            className="w-full px-4 py-4 border border-border rounded-sm text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 appearance-none cursor-pointer"
           >
             <option value="">선택해주세요</option>
             {budgetRanges.map((b) => (
@@ -195,7 +195,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label className="block text-sm font-medium text-dark mb-1.5">
+        <label className="block text-sm font-medium text-white/90 mb-1.5">
           문의 내용
         </label>
         <textarea
@@ -204,7 +204,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           placeholder="원하시는 스타일, 특별히 요청하실 사항을 자유롭게 작성해주세요."
-          className="w-full px-4 py-4 border border-border rounded-sm text-sm focus:outline-none focus:border-gold transition-colors bg-warm-50 placeholder:text-warm-400 resize-none"
+          className="w-full px-4 py-4 border border-border rounded-sm text-sm text-white focus:outline-none focus:border-gold transition-colors bg-warm-300 placeholder:text-muted/60 resize-none"
         />
       </div>
 

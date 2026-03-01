@@ -34,7 +34,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
   return (
     <>
       {/* ── Hero — dark ── */}
-      <section className="bg-[#0C0A07] pt-44 pb-0">
+      <section className="bg-[#0B0D12] pt-44 pb-0">
         <div className="container-main pb-12 md:pb-16">
 
           {/* Back link */}
@@ -101,7 +101,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
       </section>
 
       {/* ── Story + Project info ── */}
-      <section className="section-padding bg-warm-50">
+      <section className="section-padding bg-warm-200">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20">
 
@@ -111,14 +111,14 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
               {/* Challenge callout */}
               <blockquote
-                className="text-base md:text-lg text-dark leading-relaxed font-light
+                className="text-base md:text-lg text-white leading-relaxed font-light
                            border-l-2 border-gold/50 pl-6 mb-10 md:mb-12 italic"
               >
                 &ldquo;{detail.challenge}&rdquo;
               </blockquote>
 
               {/* Story paragraphs */}
-              <div className="space-y-5 text-dark-soft text-sm leading-loose">
+              <div className="space-y-5 text-white/70 text-sm leading-loose">
                 {detail.story.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
@@ -180,8 +180,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
                 <Link
                   href="/contact"
                   className="mt-9 flex items-center justify-center gap-2 px-6 py-3.5
-                             bg-[#C9A87C] text-[#0C0A07] text-sm tracking-wide
-                             hover:bg-[#D8BA90] transition-colors duration-200"
+                             bg-[#1E4ED8] text-white text-sm tracking-wide
+                             hover:bg-[#2563EB] transition-colors duration-200"
                 >
                   이 스타일로 상담하기
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -200,7 +200,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
         <div className="container-main">
           <div className="mb-12 md:mb-16">
             <span className="section-label">Before &amp; After</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-dark">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               시공 전후 비교
             </h2>
           </div>
@@ -246,10 +246,10 @@ export default async function PortfolioDetailPage({ params }: Props) {
       </section>
 
       {/* ── Gallery ── */}
-      <section className="section-padding bg-warm-50">
+      <section className="section-padding bg-warm-200">
         <div className="container-main">
           <span className="section-label">Gallery</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-dark mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 md:mb-16">
             공간 상세 사진
           </h2>
 
@@ -317,19 +317,19 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
       {/* ── Related Projects ── */}
       {related.length > 0 && (
-        <section className="section-padding bg-warm-50">
+        <section className="section-padding bg-warm-200">
           <div className="container-main">
             <div className="flex items-end justify-between mb-12 md:mb-16">
               <div>
                 <span className="section-label">Related Projects</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-dark">
+                <h2 className="text-2xl md:text-3xl font-bold text-white">
                   비슷한 프로젝트
                 </h2>
               </div>
               <Link
                 href="/portfolio"
                 className="hidden sm:flex items-center gap-2 text-xs tracking-[0.15em] uppercase
-                           text-muted hover:text-dark transition-colors duration-200"
+                           text-muted hover:text-white transition-colors duration-200"
               >
                 전체 보기
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -357,7 +357,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
                   <p className="text-[10px] tracking-[0.25em] uppercase text-muted mb-2">
                     {rel.category}&ensp;·&ensp;{rel.location}
                   </p>
-                  <h3 className="text-base md:text-lg font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200">
+                  <h3 className="text-base md:text-lg font-bold text-white leading-snug group-hover:text-gold transition-colors duration-200">
                     {rel.title}
                   </h3>
                   <p className="text-sm text-muted mt-1">{rel.subtitle}</p>

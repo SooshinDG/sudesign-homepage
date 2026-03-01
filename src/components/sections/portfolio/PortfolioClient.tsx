@@ -23,8 +23,8 @@ export default function PortfolioClient() {
             onClick={() => setActive(cat)}
             className={`py-2 px-1 text-sm tracking-wide transition-all duration-200 ${
               active === cat
-                ? 'text-dark border-b border-dark'
-                : 'text-dark-soft/70 hover:text-dark'
+                ? 'text-white border-b border-white'
+                : 'text-white/50 hover:text-white'
             }`}
           >
             {cat}
@@ -32,11 +32,7 @@ export default function PortfolioClient() {
         ))}
       </div>
 
-      {/* ── Editorial grid ──
-          Pattern: every 3rd card (index 0, 3, 6…) is a full-width feature.
-          The two cards between each feature pair as halves.
-          Result: feature → pair → feature → pair …  like a magazine spread.
-      ── */}
+      {/* ── Editorial grid ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-x-10 md:gap-y-24 lg:gap-x-12 lg:gap-y-28">
         {filtered.map((item, index) => {
           const isFeature = index % 3 === 0
@@ -50,7 +46,7 @@ export default function PortfolioClient() {
             <article>
               {/* ── Image ── */}
               <div
-                className={`relative overflow-hidden bg-warm-200 ${
+                className={`relative overflow-hidden bg-warm-300 ${
                   isFeature
                     ? 'h-[60vw] md:h-[62vh] max-h-[600px]'
                     : 'h-[70vw] sm:h-[55vw] md:h-[50vh] max-h-[480px]'
@@ -69,10 +65,9 @@ export default function PortfolioClient() {
                   }
                 />
 
-                {/* Hover overlay — gradient pool + info reveal */}
+                {/* Hover overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100
                                 transition-opacity duration-700 pointer-events-none">
-                  {/* Bottom gradient */}
                   <div
                     className="absolute inset-0"
                     style={{
@@ -80,7 +75,6 @@ export default function PortfolioClient() {
                         'linear-gradient(to top, rgba(8,6,4,0.82) 0%, rgba(8,6,4,0.38) 40%, transparent 68%)',
                     }}
                   />
-                  {/* Info panel — slides up into view */}
                   <div
                     className="absolute bottom-0 left-0 right-0 p-6 md:p-8
                                translate-y-2 group-hover:translate-y-0
@@ -100,22 +94,21 @@ export default function PortfolioClient() {
                 </div>
               </div>
 
-              {/* ── Caption — below image, editorial ── */}
+              {/* ── Caption ── */}
               <div className="mt-5 md:mt-6">
-                {/* Title row */}
                 <div className="flex items-start justify-between gap-6 mb-3.5">
                   <div>
-                    <p className="text-[10px] tracking-[0.28em] uppercase text-dark-soft/70 mb-2.5">
+                    <p className="text-[10px] tracking-[0.28em] uppercase text-white/50 mb-2.5">
                       {item.category}&ensp;·&ensp;{item.location}
                     </p>
                     <h3
-                      className={`font-bold text-dark leading-snug group-hover:text-gold transition-colors duration-200 ${
+                      className={`font-bold text-white leading-snug group-hover:text-gold transition-colors duration-200 ${
                         isFeature ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
                       }`}
                     >
                       {item.title}
                     </h3>
-                    <p className="text-sm text-dark-soft mt-1 leading-relaxed">{item.subtitle}</p>
+                    <p className="text-sm text-white/60 mt-1 leading-relaxed">{item.subtitle}</p>
                   </div>
                 </div>
 
@@ -130,7 +123,7 @@ export default function PortfolioClient() {
                       {i > 0 && <div className="w-px h-3 bg-border mx-4 shrink-0" />}
                       <div>
                         <p className="text-[8px] tracking-[0.2em] uppercase text-muted/60 mb-0.5">{meta.label}</p>
-                        <p className="text-[11px] text-dark-soft/80 tabular-nums">{meta.value}</p>
+                        <p className="text-[11px] text-white/60 tabular-nums">{meta.value}</p>
                       </div>
                     </div>
                   ))}
@@ -144,7 +137,7 @@ export default function PortfolioClient() {
 
       {/* Empty state */}
       {filtered.length === 0 && (
-        <div className="py-28 text-center text-dark-soft/60 text-sm tracking-widest uppercase">
+        <div className="py-28 text-center text-white/40 text-sm tracking-widest uppercase">
           해당 카테고리의 프로젝트가 없습니다
         </div>
       )}

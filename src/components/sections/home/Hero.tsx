@@ -9,7 +9,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#14120D] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-[#0B0D12] overflow-hidden">
 
       {/* ── Background layers ── */}
 
@@ -27,18 +27,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Warm dark scrim — base opacity so text always wins */}
+      {/* Dark scrim */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(18,13,8,0.60)' }}
+        style={{ background: 'rgba(11,13,18,0.62)' }}
       />
 
-      {/* Bottom gradient — deep crush that anchors the text block */}
+      {/* Bottom gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(10,8,5,0.97) 0%, rgba(10,8,5,0.78) 28%, rgba(10,8,5,0.22) 56%, transparent 80%)',
+            'linear-gradient(to top, rgba(8,10,15,0.97) 0%, rgba(8,10,15,0.78) 28%, rgba(8,10,15,0.22) 56%, transparent 80%)',
         }}
       />
 
@@ -47,51 +47,51 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(10,8,5,0.50) 0%, transparent 30%)',
+            'linear-gradient(to bottom, rgba(8,10,15,0.50) 0%, transparent 30%)',
         }}
       />
 
-      {/* Cinematic edge vignette — deep corner crush for drama */}
+      {/* Cinematic edge vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 68% 68% at 38% 52%, transparent 28%, rgba(6,4,2,0.72) 100%)',
+            'radial-gradient(ellipse 68% 68% at 38% 52%, transparent 28%, rgba(4,6,12,0.72) 100%)',
         }}
       />
 
-      {/* Headline ambient light — broad warm field enclosing the text block */}
+      {/* Headline ambient light — broad blue field */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 58% 62% at 16% 65%, rgba(184,150,106,0.22) 0%, transparent 72%)',
+            'radial-gradient(ellipse 58% 62% at 16% 65%, rgba(59,130,246,0.15) 0%, transparent 72%)',
         }}
       />
 
-      {/* Headline core light — tight hot spot; simulates an off-screen source */}
+      {/* Headline core light — tight blue hot spot */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 22% 26% at 10% 66%, rgba(220,176,118,0.16) 0%, transparent 62%)',
+            'radial-gradient(ellipse 22% 26% at 10% 66%, rgba(59,130,246,0.10) 0%, transparent 62%)',
         }}
       />
 
-      {/* Ground spill — faint floor pool that gives the light 3-D grounding */}
+      {/* Ground spill */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 52% 18% at 18% 94%, rgba(160,120,70,0.09) 0%, transparent 70%)',
+            'radial-gradient(ellipse 52% 18% at 18% 94%, rgba(30,78,216,0.07) 0%, transparent 70%)',
         }}
       />
 
-      {/* Gold ambient bleed — top-right */}
-      <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-[#B8966A]/12 via-[#B8966A]/4 to-transparent pointer-events-none" />
+      {/* Blue ambient bleed — top-right */}
+      <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-[#3B82F6]/12 via-[#3B82F6]/4 to-transparent pointer-events-none" />
 
-      {/* Gold ambient bleed — bottom-left */}
-      <div className="absolute bottom-0 left-0 w-2/5 h-1/2 bg-gradient-to-tr from-[#B8966A]/6 to-transparent pointer-events-none" />
+      {/* Blue ambient bleed — bottom-left */}
+      <div className="absolute bottom-0 left-0 w-2/5 h-1/2 bg-gradient-to-tr from-[#3B82F6]/6 to-transparent pointer-events-none" />
 
       {/* Film grain texture */}
       <div
@@ -102,7 +102,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Thin horizontal rule — editorial accent at 1/3 height */}
+      {/* Thin horizontal rule */}
       <div className="absolute top-1/3 left-0 right-0 h-px bg-white/[0.03] pointer-events-none" />
 
       {/* ── Main content ── */}
@@ -110,11 +110,11 @@ export default function Hero() {
 
         <div className="flex items-end justify-between gap-10 lg:pl-6 xl:pl-10">
 
-          {/* Left: editorial text column — intentionally narrow, left-anchored */}
+          {/* Left: editorial text column */}
           <div className="w-full max-w-[21rem] md:max-w-[26rem] lg:max-w-[28rem]">
             <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
 
-            {/* Short emotional headline */}
+            {/* Headline */}
             <h1
               className="hero-enter hero-enter-1
                          text-[3.15rem] sm:text-[4.5rem] md:text-[5.6rem] lg:text-[6.5rem]
@@ -126,12 +126,12 @@ export default function Hero() {
             >
               공간이
               <br />
-              <span className="text-[#C9A87C]">삶이</span>
+              <span className="text-[#60A5FA]">삶이</span>
               <br />
               됩니다
             </h1>
 
-            {/* Subtle, airy subtitle */}
+            {/* Subtitle */}
             <p className="hero-enter hero-enter-2 text-warm-400/85 text-sm leading-[2.1] max-w-[17rem] mb-11 md:mb-14">
               조용히, 그러나 분명하게.
               <br />
@@ -140,7 +140,7 @@ export default function Hero() {
               공간을 설계합니다.
             </p>
 
-            {/* Minimal text-link CTAs — no boxes, no bold colours */}
+            {/* CTAs */}
             <div className="hero-enter hero-enter-3 flex items-center gap-7">
               <Link
                 href="/portfolio"
@@ -207,7 +207,7 @@ export default function Hero() {
                 <p className="text-base md:text-lg font-light text-white/80 tracking-tight leading-none">
                   {stat.num}
                 </p>
-                <p className="text-[10px] text-warm-300/65 mt-1.5 tracking-[0.22em] uppercase">
+                <p className="text-[10px] text-white/45 mt-1.5 tracking-[0.22em] uppercase">
                   {stat.label}
                 </p>
               </div>
@@ -221,11 +221,8 @@ export default function Hero() {
       <div className="hero-enter hero-enter-4 absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10
                       flex flex-col items-center gap-3 pointer-events-none select-none">
         <span className="text-[8px] tracking-[0.45em] uppercase text-white/22">Scroll</span>
-        {/* Line container — overflow hidden clips the flowing segment */}
         <div className="relative w-px h-14 overflow-hidden">
-          {/* Dim base line */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-white/8 to-transparent" />
-          {/* Flowing light segment */}
           <div
             className="hero-scroll-flow absolute w-full"
             style={{

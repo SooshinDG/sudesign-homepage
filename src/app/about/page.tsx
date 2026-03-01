@@ -84,13 +84,13 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Story */}
-      <section className="section-padding bg-warm-50">
+      <section className="section-padding bg-warm-200">
         <div className="container-main">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 items-start">
             {/* Text */}
             <div>
               <span className="section-label">Our Story</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-8 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 leading-snug">
                 공간이 삶을 바꾼다는
                 <br />
                 믿음으로 시작했습니다
@@ -108,7 +108,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Stats block — no rounded, warm bg */}
+            {/* Stats block */}
             <div className="grid grid-cols-2 gap-3">
               {[
                 { num: '2016', label: '설립 연도' },
@@ -118,9 +118,9 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="p-7 md:p-8 bg-warm-100 border border-border text-center"
+                  className="p-7 md:p-8 bg-warm-300 border border-border text-center"
                 >
-                  <p className="text-2xl md:text-3xl font-light text-dark mb-1.5 tracking-tight">
+                  <p className="text-2xl md:text-3xl font-light text-white mb-1.5 tracking-tight">
                     {stat.num}
                   </p>
                   <p className="text-xs text-muted tracking-wider">{stat.label}</p>
@@ -142,10 +142,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5">
             {values.map((v) => (
-              <div
-                key={v.title}
-                className="p-10 bg-dark"
-              >
+              <div key={v.title} className="p-10 bg-dark">
                 <span className="text-gold text-xs mb-5 block tracking-widest">{v.icon}</span>
                 <h3 className="text-white text-lg font-bold mb-3">{v.title}</h3>
                 <p className="text-white/50 text-sm leading-loose">{v.description}</p>
@@ -156,11 +153,11 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-warm-50">
+      <section className="section-padding bg-warm-200">
         <div className="container-main">
           <div className="mb-14 md:mb-20">
             <span className="section-label">Team</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-dark">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               수디자인 팀
             </h2>
           </div>
@@ -168,15 +165,15 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-warm-100 border border-border p-8 md:p-10"
+                className="bg-warm-300 border border-border p-8 md:p-10"
               >
-                <div className="w-12 h-12 bg-warm-300 flex items-center justify-center mb-6 text-dark font-medium text-sm">
+                <div className="w-12 h-12 bg-warm-200 flex items-center justify-center mb-6 text-white font-medium text-sm">
                   {member.initial}
                 </div>
-                <h3 className="text-base font-bold text-dark">{member.name}</h3>
+                <h3 className="text-base font-bold text-white">{member.name}</h3>
                 <p className="text-gold text-xs tracking-wide mt-1 mb-0.5">{member.role}</p>
                 <p className="text-muted text-xs mb-5">{member.experience}</p>
-                <p className="text-dark-soft text-sm leading-loose">{member.description}</p>
+                <p className="text-white/70 text-sm leading-loose">{member.description}</p>
               </div>
             ))}
           </div>

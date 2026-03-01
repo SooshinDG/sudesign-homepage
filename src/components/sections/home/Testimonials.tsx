@@ -30,12 +30,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-warm-50 border-t border-warm-300">
+    <section className="section-padding bg-warm-200 border-t border-warm-300">
       <div className="container-main">
         {/* Header */}
         <div className="mb-14 md:mb-20">
           <span className="section-label">Reviews</span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             고객 후기
           </h2>
         </div>
@@ -45,7 +45,7 @@ export default function Testimonials() {
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-warm-100 p-8 md:p-10 border-l-2 border-gold/40 flex flex-col"
+              className="bg-warm-300 p-8 md:p-10 border-l-2 border-gold/40 flex flex-col"
             >
               {/* Service tag + stars */}
               <div className="flex items-center justify-between mb-6">
@@ -65,18 +65,18 @@ export default function Testimonials() {
               <div className="text-5xl font-serif text-gold/18 leading-none mb-4 select-none">&ldquo;</div>
 
               {/* Review text */}
-              <blockquote className="text-dark-soft text-sm leading-[2] flex-1 mb-8">
+              <blockquote className="text-white/80 text-sm leading-[2] flex-1 mb-8">
                 {item.text}
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-3.5 pt-6 border-t border-border">
-                <div className="w-10 h-10 bg-warm-300 flex items-center justify-center
-                                text-dark font-medium text-[10px] tracking-wider shrink-0">
+                <div className="w-10 h-10 bg-warm-200 flex items-center justify-center
+                                text-white font-medium text-[10px] tracking-wider shrink-0">
                   {item.initials}
                 </div>
                 <div>
-                  <p className="font-medium text-dark text-sm leading-snug">{item.name}</p>
+                  <p className="font-medium text-white text-sm leading-snug">{item.name}</p>
                   <p className="text-muted text-[11px] mt-0.5 tracking-wide">{item.area}</p>
                 </div>
               </div>

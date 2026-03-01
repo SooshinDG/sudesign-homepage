@@ -7,14 +7,14 @@ export default function FeaturedProjects() {
   const [hero, ...pair] = portfolioItems.filter((p) => p.featured).slice(0, 3)
 
   return (
-    <section className="section-padding bg-warm-50 border-t border-warm-300">
+    <section className="section-padding bg-warm-200 border-t border-warm-300">
       <div className="container-main">
 
         {/* ── Section header ── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 md:mb-18">
           <div>
             <span className="section-label">Portfolio</span>
-            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-dark leading-snug">
+            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-white leading-snug">
               주요 시공 사례
             </h2>
           </div>
@@ -41,7 +41,7 @@ export default function FeaturedProjects() {
           {/* Left — large hero image */}
           <Link
             href="/portfolio"
-            className="group md:col-span-3 relative overflow-hidden bg-warm-200
+            className="group md:col-span-3 relative overflow-hidden bg-warm-300
                        h-[62vw] md:h-full"
           >
             <Image
@@ -58,13 +58,13 @@ export default function FeaturedProjects() {
 
             {/* Caption */}
             <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-warm-200/90 mb-2.5">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-white/80 mb-2.5">
                 {hero.category}&ensp;·&ensp;{hero.location}&ensp;·&ensp;{hero.area}
               </p>
               <h3 className="text-white text-xl md:text-2xl font-bold leading-snug">
                 {hero.title}
               </h3>
-              <p className="text-warm-300/90 text-sm mt-1">{hero.subtitle}</p>
+              <p className="text-white/65 text-sm mt-1">{hero.subtitle}</p>
             </div>
           </Link>
 
@@ -74,7 +74,7 @@ export default function FeaturedProjects() {
               <Link
                 key={item.id}
                 href="/portfolio"
-                className="group relative overflow-hidden bg-warm-200 flex-1
+                className="group relative overflow-hidden bg-warm-300 flex-1
                            h-52 md:h-full"
               >
                 <Image
@@ -89,7 +89,7 @@ export default function FeaturedProjects() {
 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-warm-200/90 mb-1.5">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-white/80 mb-1.5">
                     {item.category}&ensp;·&ensp;{item.area}
                   </p>
                   <h3 className="text-white text-base font-bold leading-snug">

@@ -23,12 +23,12 @@ const ExternalIcon = () => (
 
 export default function LocationPage() {
   return (
-    <main className="pb-16 md:pb-0 bg-warm-50 min-h-screen">
+    <main className="pb-16 md:pb-0 bg-warm-100 min-h-screen">
 
       {/* ── Page header ── */}
       <section className="bg-dark pt-36 pb-16 md:pt-44 md:pb-20">
         <div className="container-main">
-          <span className="section-label" style={{ color: 'rgba(201,168,124,0.7)' }}>
+          <span className="section-label">
             찾아오시는 방법
           </span>
           <h1 className="mt-4 text-[2.4rem] md:text-[3.2rem] font-bold text-white leading-tight tracking-[-0.02em]">
@@ -51,7 +51,7 @@ export default function LocationPage() {
               {/* Address */}
               <div className="mb-8">
                 <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주소</p>
-                <address className="not-italic text-dark-soft text-[1.05rem] leading-[1.85] font-medium">
+                <address className="not-italic text-white text-[1.05rem] leading-[1.85] font-medium">
                   서울특별시 구로구 구로동<br />
                   685-124번지 상가동<br />
                   중앙하이츠아파트 101호
@@ -64,14 +64,14 @@ export default function LocationPage() {
               <div className="mb-10">
                 <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">대중교통</p>
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 w-5 h-5 rounded-full bg-[#C9A87C]/15 flex items-center justify-center shrink-0">
-                    <svg className="w-2.5 h-2.5 text-[#C9A87C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <span className="mt-0.5 w-5 h-5 rounded-full bg-[#3B82F6]/15 flex items-center justify-center shrink-0">
+                    <svg className="w-2.5 h-2.5 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
                   </span>
-                  <p className="text-dark-soft/80 text-sm leading-[1.85]">
-                    지하철 <strong className="text-dark-soft font-semibold">구일역</strong> 1번 출구에서<br />
-                    도보 약 <strong className="text-dark-soft font-semibold">8분</strong>
+                  <p className="text-white/80 text-sm leading-[1.85]">
+                    지하철 <strong className="text-white font-semibold">구일역</strong> 1번 출구에서<br />
+                    도보 약 <strong className="text-white font-semibold">8분</strong>
                   </p>
                 </div>
               </div>
@@ -95,8 +95,8 @@ export default function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-5 py-3 rounded
-                             bg-[#C9A87C] text-[#0C0A07] text-[13px] font-normal tracking-[0.06em]
-                             hover:bg-[#D8BA90] hover:shadow-[0_4px_20px_rgba(201,168,124,0.4)]
+                             bg-[#1E4ED8] text-white text-[13px] font-normal tracking-[0.06em]
+                             hover:bg-[#2563EB] hover:shadow-[0_4px_20px_rgba(30,78,216,0.4)]
                              transition-all duration-300"
                 >
                   네이버 지도 길찾기
@@ -109,7 +109,7 @@ export default function LocationPage() {
               {/* Parking */}
               <div className="mb-10">
                 <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">주차 안내</p>
-                <p className="text-sm text-dark-soft/75 leading-[1.85]">
+                <p className="text-sm text-white/75 leading-[1.85]">
                   매장 앞 도로변 주차 가능합니다.
                 </p>
               </div>
@@ -119,14 +119,14 @@ export default function LocationPage() {
               {/* Office hours */}
               <div>
                 <p className="text-[10px] tracking-[0.22em] uppercase text-muted mb-3">운영 시간</p>
-                <ul className="space-y-2 text-sm text-dark-soft/70 leading-relaxed max-w-[14rem]">
+                <ul className="space-y-2 text-sm text-white/70 leading-relaxed max-w-[14rem]">
                   <li className="flex justify-between gap-6">
                     <span>평일</span>
-                    <span className="text-dark-soft">09:00 – 18:00</span>
+                    <span className="text-white">09:00 – 18:00</span>
                   </li>
                   <li className="flex justify-between gap-6">
                     <span>토요일</span>
-                    <span className="text-dark-soft">10:00 – 15:00</span>
+                    <span className="text-white">10:00 – 15:00</span>
                   </li>
                   <li className="flex justify-between gap-6">
                     <span>일요일 · 공휴일</span>

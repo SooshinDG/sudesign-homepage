@@ -28,7 +28,7 @@ export default function Process() {
         {/* Header */}
         <div className="mb-16 md:mb-24">
           <span className="section-label">Process</span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             시공 절차
           </h2>
           <p className="text-muted text-sm md:text-base mt-4 leading-loose max-w-sm">
@@ -40,11 +40,10 @@ export default function Process() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
           {steps.map((step) => (
             <div key={step.number}>
-              {/* Step number — fine, elegant */}
               <p className="text-[11px] tracking-[0.25em] text-gold mb-5 font-normal">
                 — {step.number}
               </p>
-              <h3 className="text-base font-bold text-dark mb-3">
+              <h3 className="text-base font-bold text-white mb-3">
                 {step.title}
               </h3>
               <p className="text-muted text-sm leading-loose">

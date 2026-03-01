@@ -15,13 +15,13 @@
   }
 
   body {
-    @apply bg-warm-100 text-dark-soft antialiased;
+    @apply bg-warm-100 text-white antialiased;
     font-feature-settings: 'kern' 1;
     line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-dark;
+    @apply font-bold text-white;
     line-height: 1.25;
     letter-spacing: -0.01em;
   }
@@ -39,10 +39,10 @@
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-warm-200;
+    @apply bg-warm-300;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-warm-300;
+    @apply bg-warm-200;
   }
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted;
@@ -54,17 +54,18 @@
     @apply mx-auto max-w-7xl px-5 md:px-10 lg:px-14;
   }
 
-  /* Refined buttons — no bold rounding, no gold hover flash */
+  /* Blue primary button */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3.5 bg-dark text-white text-sm
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-gold text-white text-sm
            tracking-wide transition-all duration-300 gap-2
-           hover:bg-dark-soft;
+           hover:bg-gold-dark;
   }
 
+  /* Ghost secondary — white border on dark bg */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-3.5 border border-dark text-dark text-sm
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-white/40 text-white text-sm
            tracking-wide transition-all duration-300 gap-2
-           hover:bg-dark hover:text-white;
+           hover:bg-white/10 hover:border-white/70;
   }
 
   .btn-ghost {
@@ -75,8 +76,8 @@
 
   /* Subtle text-link CTA */
   .btn-text {
-    @apply inline-flex items-center gap-2 text-sm text-dark-soft
-           border-b border-dark/30 pb-0.5 tracking-wide
+    @apply inline-flex items-center gap-2 text-sm text-white/70
+           border-b border-white/30 pb-0.5 tracking-wide
            hover:text-gold hover:border-gold transition-colors duration-200;
   }
 

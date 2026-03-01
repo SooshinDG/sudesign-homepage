@@ -34,25 +34,25 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         solid
-          ? 'bg-warm-50/95 backdrop-blur-md border-b border-warm-200/70'
+          ? 'bg-[#0B0D12]/95 backdrop-blur-md border-b border-[#1E2538]/70'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="container-main">
         <div className="flex items-center justify-between h-[5rem] md:h-[6.5rem]">
 
-          {/* Logo — brand mark */}
+          {/* Logo */}
           <Link href="/" className="flex items-center leading-none">
             <span
               className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
-                solid ? 'text-dark' : 'text-white/95'
+                solid ? 'text-white' : 'text-white/95'
               }`}
             >
               수
             </span>
             <span
               className={`text-[1.9rem] md:text-[2.6rem] font-bold tracking-[-0.03em] transition-colors duration-300 ${
-                solid ? 'text-gold' : 'text-[#C9A87C]'
+                solid ? 'text-gold' : 'text-[#3B82F6]'
               }`}
             >
               디자인
@@ -68,9 +68,7 @@ export default function Header() {
                 className={`text-[15px] font-normal tracking-[0.06em] transition-colors duration-300 ${
                   pathname === link.href
                     ? 'text-gold'
-                    : solid
-                    ? 'text-dark-soft/75 hover:text-dark'
-                    : 'text-white/60 hover:text-white/95'
+                    : 'text-white/60 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -78,14 +76,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA — gold button, most visible header element */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <Link
               href="/contact"
               className="px-5 py-[0.6rem] rounded text-[13px] font-normal tracking-[0.08em]
-                         bg-[#C9A87C] text-[#0C0A07]
+                         bg-[#1E4ED8] text-white
                          transition-all duration-300
-                         hover:bg-[#D8BA90] hover:shadow-[0_4px_24px_rgba(201,168,124,0.55)]"
+                         hover:bg-[#2563EB] hover:shadow-[0_4px_24px_rgba(59,130,246,0.40)]"
             >
               무료 상담 시작하기
             </Link>
@@ -99,19 +97,19 @@ export default function Header() {
             aria-expanded={isOpen}
           >
             <span
-              className={`block w-6 h-px transition-all duration-300 origin-center ${
-                solid ? 'bg-dark' : 'bg-white/70'
-              } ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
+              className={`block w-6 h-px transition-all duration-300 origin-center bg-white/80 ${
+                isOpen ? 'rotate-45 translate-y-[7px]' : ''
+              }`}
             />
             <span
-              className={`block w-4 h-px transition-all duration-300 ${
-                solid ? 'bg-dark' : 'bg-white/70'
-              } ${isOpen ? 'opacity-0' : ''}`}
+              className={`block w-4 h-px transition-all duration-300 bg-white/80 ${
+                isOpen ? 'opacity-0' : ''
+              }`}
             />
             <span
-              className={`block w-6 h-px transition-all duration-300 origin-center ${
-                solid ? 'bg-dark' : 'bg-white/70'
-              } ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
+              className={`block w-6 h-px transition-all duration-300 origin-center bg-white/80 ${
+                isOpen ? '-rotate-45 -translate-y-[7px]' : ''
+              }`}
             />
           </button>
         </div>
@@ -119,19 +117,19 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-warm-50/98 backdrop-blur-md ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-[#0B0D12]/98 backdrop-blur-md ${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <nav className="container-main py-5 pb-7 border-t border-warm-200/60">
+        <nav className="container-main py-5 pb-7 border-t border-[#1E2538]/60">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`flex items-center py-4 text-sm tracking-wide border-b border-warm-200/50 last:border-0 transition-colors ${
+              className={`flex items-center py-4 text-sm tracking-wide border-b border-[#1E2538]/50 last:border-0 transition-colors ${
                 pathname === link.href
                   ? 'text-gold'
-                  : 'text-dark-soft/70 hover:text-dark'
+                  : 'text-white/60 hover:text-white'
               }`}
             >
               {link.label}
@@ -140,8 +138,8 @@ export default function Header() {
           <Link
             href="/contact"
             className="block mt-5 py-3 text-center text-sm tracking-[0.06em] rounded-sm
-                       bg-[#C9A87C] text-[#0E0C08]
-                       hover:bg-[#D4B48C] transition-colors duration-200"
+                       bg-[#1E4ED8] text-white
+                       hover:bg-[#2563EB] transition-colors duration-200"
           >
             무료 상담 시작하기
           </Link>

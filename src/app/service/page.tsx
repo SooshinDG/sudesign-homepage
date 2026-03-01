@@ -37,7 +37,7 @@ export default function ServicePage() {
       </section>
 
       {/* ── Editorial service spreads ── */}
-      <div className="bg-warm-50">
+      <div className="bg-warm-200">
         {services.map((service, i) => {
           const isEven = i % 2 === 1
 
@@ -45,11 +45,11 @@ export default function ServicePage() {
             <div
               key={service.id}
               className={`flex flex-col lg:flex-row lg:min-h-[600px]
-                          ${i > 0 ? 'border-t border-warm-200' : ''}
+                          ${i > 0 ? 'border-t border-warm-300' : ''}
                           ${isEven ? 'lg:flex-row-reverse' : ''}`}
             >
 
-              {/* Image — bleeds edge-to-edge on its half */}
+              {/* Image */}
               <div className="relative w-full lg:w-1/2 min-h-[58vw] md:min-h-[420px] lg:min-h-0 overflow-hidden">
                 <Image
                   src={`https://picsum.photos/seed/svc${service.id}/900/720`}
@@ -60,7 +60,7 @@ export default function ServicePage() {
                 />
               </div>
 
-              {/* Text — anchored with editorial padding */}
+              {/* Text */}
               <div
                 className={`w-full lg:w-1/2 flex items-center
                             ${isEven ? 'lg:justify-end' : ''}`}
@@ -79,9 +79,7 @@ export default function ServicePage() {
                   </p>
 
                   {/* Title */}
-                  <h2
-                    className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-dark leading-snug mb-3"
-                  >
+                  <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-white leading-snug mb-3">
                     {service.title}
                   </h2>
 
@@ -90,15 +88,15 @@ export default function ServicePage() {
                     {service.subtitle}
                   </p>
 
-                  {/* Gold rule */}
+                  {/* Blue rule */}
                   <div className="w-7 h-px bg-gold/40 mb-10" />
 
                   {/* Description */}
-                  <p className="text-dark-soft text-sm leading-loose mb-10">
+                  <p className="text-white/70 text-sm leading-loose mb-10">
                     {service.description}
                   </p>
 
-                  {/* Features — minimal list, no bullets */}
+                  {/* Features */}
                   <ul className="space-y-2.5 mb-12">
                     {service.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-xs text-muted tracking-wide">
