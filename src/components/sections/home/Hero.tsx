@@ -27,30 +27,21 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Very light top scrim — keeps nav text readable */}
+      {/* Top scrim — nav readability only */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, transparent 20%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 18%)',
         }}
       />
 
-      {/* White gradient at bottom — creates bright reading surface */}
+      {/* Bottom white ramp — anchors stats strip, fades out fast */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(247,249,252,0.98) 0%, rgba(247,249,252,0.90) 24%, rgba(247,249,252,0.55) 46%, transparent 66%)',
-        }}
-      />
-
-      {/* Soft radial bloom behind text column — centre contrast, bright edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 54% 62% at 18% 84%, rgba(247,249,252,0.55) 0%, rgba(247,249,252,0.18) 52%, transparent 72%)',
+            'linear-gradient(to top, rgba(247,249,252,0.94) 0%, rgba(247,249,252,0.60) 14%, rgba(247,249,252,0.18) 32%, transparent 50%)',
         }}
       />
 
@@ -69,10 +60,10 @@ export default function Hero() {
       {/* ── Main content ── */}
       <div className="container-main relative z-10 flex-1 flex flex-col justify-end pb-16 md:pb-20 pt-36 md:pt-44">
 
-        <div className="flex items-end justify-between gap-10 lg:pl-6 xl:pl-10">
+        <div className="flex items-end justify-between gap-12 lg:gap-16">
 
           {/* Left: editorial text column */}
-          <div className="w-full max-w-[21rem] md:max-w-[26rem] lg:max-w-[28rem]">
+          <div className="w-full max-w-[24rem] md:max-w-[32rem] lg:max-w-[40rem]">
             <span className="section-label hero-enter hero-enter-1">Interior Design Studio</span>
 
             {/* Headline */}
@@ -93,14 +84,14 @@ export default function Hero() {
               됩니다
             </h1>
 
-            {/* Glass panel — subtitle + CTAs */}
+            {/* Glass panel — tighter, lower opacity behind sub-copy/CTAs only */}
             <div
               className="hero-enter hero-enter-2
-                         backdrop-blur-md rounded-sm px-5 pt-5 pb-5 -mx-2 mb-11 md:mb-14"
-              style={{ background: 'rgba(247,249,252,0.52)' }}
+                         backdrop-blur-sm rounded-sm px-5 pt-4 pb-4 -mx-2 mb-11 md:mb-14"
+              style={{ background: 'rgba(247,249,252,0.28)' }}
             >
               {/* Subtitle */}
-              <p className="text-dark/65 text-sm leading-[2.1] max-w-[17rem] mb-6">
+              <p className="text-dark/70 text-sm leading-[2.1] max-w-[20rem] mb-6">
                 조용히, 그러나 분명하게.
                 <br />
                 수디자인은 당신의 이야기가 담긴
@@ -150,10 +141,10 @@ export default function Hero() {
           </div>
 
           {/* Right: editorial vertical text — desktop only */}
-          <div className="hero-enter hero-enter-3 hidden lg:flex flex-col items-center gap-5 pb-1 select-none">
-            <div className="w-px h-20 bg-gradient-to-b from-transparent to-white/10" />
+          <div className="hero-enter hero-enter-3 hidden lg:flex flex-col items-center gap-5 pb-1 select-none shrink-0">
+            <div className="w-px h-20 bg-gradient-to-b from-transparent to-dark/12" />
             <p
-              className="text-[9px] text-dark/20 tracking-[0.5em] uppercase font-light"
+              className="text-[9px] text-dark/28 tracking-[0.5em] uppercase font-light"
               style={{ writingMode: 'vertical-rl', letterSpacing: '0.5em' }}
             >
               Since 2016 · Seoul
